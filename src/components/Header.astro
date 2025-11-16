@@ -1,0 +1,132 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/menu', label: 'Menu' },
+  { href: '/about', label: 'About' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/reservations', label: 'Reservations' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white/98 backdrop-blur-md shadow-sm">
+  <!-- Top Bar with subtle pattern -->
+  <div class="h-1 bg-gradient-to-r from-garden-green via-sea-teal to-garden-green"></div>
+
+  <nav class="container mx-auto px-6 py-5">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center group">
+        <img
+          src="/logo.png"
+          alt="Fragkosyko"
+          class="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+          style="mix-blend-mode: multiply;"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-1">
+        {navItems.map(item => (
+          <a
+            href={item.href}
+            class={`relative px-4 py-2 text-sm font-semibold tracking-wide transition-all duration-300 rounded-lg ${
+              currentPath === item.href
+                ? 'text-garden-green bg-garden-green/5'
+                : 'text-charcoal hover:text-garden-green hover:bg-warm-sand/20'
+            }`}
+          >
+            {item.label}
+            {currentPath === item.href && (
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-garden-green rounded-full"></span>
+            )}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Button + Mobile Menu -->
+      <div class="flex items-center space-x-4">
+        <!-- Desktop CTA -->
+        <a
+          href="/reservations"
+          class="hidden lg:flex items-center space-x-2 px-6 py-2.5 bg-gradient-to-r from-garden-green to-garden-green-dark text-white rounded-full hover:shadow-lg hover:shadow-garden-green/30 transition-all duration-300 font-semibold text-sm group"
+        >
+          <span>Book a Table</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="lg:hidden relative p-2 text-charcoal hover:text-garden-green transition-colors rounded-lg hover:bg-warm-sand/20"
+          aria-label="Toggle menu"
+        >
+          <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-warm-sand/30 bg-white/98 backdrop-blur-md">
+    <div class="container mx-auto px-6 py-6">
+      <div class="flex flex-col space-y-2">
+        {navItems.map(item => (
+          <a
+            href={item.href}
+            class={`px-4 py-3 text-base font-semibold rounded-lg transition-all ${
+              currentPath === item.href
+                ? 'text-garden-green bg-garden-green/10'
+                : 'text-charcoal hover:text-garden-green hover:bg-warm-sand/20'
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Mobile CTA -->
+      <div class="mt-6 pt-6 border-t border-warm-sand/30">
+        <a
+          href="/reservations"
+          class="flex items-center justify-center space-x-2 w-full px-6 py-3 bg-gradient-to-r from-garden-green to-garden-green-dark text-white rounded-full hover:shadow-lg transition-all font-semibold"
+        >
+          <span>Book a Table</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    const isHidden = mobileMenu?.classList.toggle('hidden');
+
+    // Toggle icons
+    if (isHidden) {
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    } else {
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    }
+  });
+</script>
+

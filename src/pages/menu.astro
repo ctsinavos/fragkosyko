@@ -1,0 +1,445 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Menu – Fragkosyko" description="Explore our brunch menu, signature cocktails, and locally-inspired dishes from Naxos.">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="py-20 bg-gradient-to-br from-warm-sand/30 to-sea-teal/10">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif font-bold text-garden-green mb-6">
+        Our Menu
+      </h1>
+      <p class="text-lg max-w-3xl mx-auto text-charcoal/80">
+        Our menus change with the seasons, celebrating local producers and Naxos flavors.
+        Every dish and drink is crafted with care, from sunrise brunch to starlit cocktails.
+      </p>
+    </div>
+  </section>
+
+  <!-- Menu Navigation Tabs -->
+  <div class="bg-white border-b border-warm-sand sticky top-[73px] z-40">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center space-x-8 py-4">
+        <button
+          class="menu-tab px-4 py-2 font-semibold text-garden-green border-b-2 border-garden-green transition-colors"
+          data-menu="brunch"
+        >
+          Brunch & Daytime
+        </button>
+        <button
+          class="menu-tab px-4 py-2 font-semibold text-charcoal/60 border-b-2 border-transparent hover:text-garden-green transition-colors"
+          data-menu="cocktails"
+        >
+          Cocktails & Drinks
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brunch Menu -->
+  <section id="menu-brunch" class="menu-section py-20 bg-cycladic-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+
+      <!-- Coffee & Beverages -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-garden-green/10 rounded-full flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-garden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">Coffee & Beverages</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Greek Coffee</h3>
+              <p class="text-sm text-charcoal/70">Traditional, rich, and aromatic</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€3.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Espresso / Cappuccino / Latte</h3>
+              <p class="text-sm text-charcoal/70">Locally roasted beans, expertly crafted</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€3.50 - €4.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Island Cold Brew</h3>
+              <p class="text-sm text-charcoal/70">Smooth, refreshing, served over ice</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€5.00</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Fresh Juices</h3>
+              <p class="text-sm text-charcoal/70">Orange, grapefruit, seasonal fruits</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€5.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Herbal Teas</h3>
+              <p class="text-sm text-charcoal/70">Greek mountain tea, chamomile, mint from our garden</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€3.50</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bites & Pastries -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4">
+            <span class="text-2xl">🥐</span>
+          </div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">Bites & Pastries</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Greek Pastry Board</h3>
+              <p class="text-sm text-charcoal/70">Bougatsa, koulouri, honey from Naxos bees</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€8.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Fresh Croissant</h3>
+              <p class="text-sm text-charcoal/70">Butter or almond, baked daily</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€3.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Yogurt & Honey Bowl</h3>
+              <p class="text-sm text-charcoal/70">Greek yogurt, local honey, seasonal fruits, granola</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€7.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brunch Plates -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-sea-teal/10 rounded-full flex items-center justify-center mr-4">
+            <span class="text-2xl">🍳</span>
+          </div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">Brunch Plates</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Naxos Shakshuka</h3>
+              <p class="text-sm text-charcoal/70">Local eggs poached in spiced tomato sauce, feta, fresh herbs, sourdough</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€12.00</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Garden Avocado Toast</h3>
+              <p class="text-sm text-charcoal/70">Sourdough, smashed avocado, cherry tomatoes, feta, olive oil, lemon</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€11.00</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Eggs Your Way</h3>
+              <p class="text-sm text-charcoal/70">Scrambled, poached, or fried. Served with sourdough and seasonal greens</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€9.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Greek Breakfast Plate</h3>
+              <p class="text-sm text-charcoal/70">Local cheeses, olives, tomatoes, cucumber, boiled egg, rusks, olive oil</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€13.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Pancakes</h3>
+              <p class="text-sm text-charcoal/70">Fluffy pancakes with honey, fresh fruit, Greek yogurt</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€10.00</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Omelette of the Day</h3>
+              <p class="text-sm text-charcoal/70">Three eggs with seasonal vegetables and local cheese</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€11.50</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sweets -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4">
+            <span class="text-2xl">🍰</span>
+          </div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">Sweets</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Baklava</h3>
+              <p class="text-sm text-charcoal/70">Traditional, with pistachios and honey</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€5.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Galaktoboureko</h3>
+              <p class="text-sm text-charcoal/70">Custard pie with crispy phyllo and syrup</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€5.00</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cocktails Menu -->
+  <section id="menu-cocktails" class="menu-section hidden py-20 bg-cycladic-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+
+      <!-- Signature Cocktails -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-garden-green/10 rounded-full flex items-center justify-center mr-4">
+            <span class="text-2xl">🍸</span>
+          </div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">Signature Cocktails</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2 flex items-center">
+                Fragkosyko Sour
+                <span class="ml-2 text-xs bg-prickly-pear/20 text-prickly-pear px-2 py-1 rounded-full">⭐ House Favorite</span>
+              </h3>
+              <p class="text-sm text-charcoal/70">Gin, prickly pear, lemon, wild thyme from our garden</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€10.00</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2 flex items-center">
+                Aegean Sunset
+                <span class="ml-2 text-xs bg-sea-teal/20 text-sea-teal px-2 py-1 rounded-full">🌿 Naxos Herbs</span>
+              </h3>
+              <p class="text-sm text-charcoal/70">Ouzo, citrus, honey, hint of lavender</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€9.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Garden Negroni</h3>
+              <p class="text-sm text-charcoal/70">Gin, Campari, sweet vermouth, orange, rosemary</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€11.00</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2 flex items-center">
+                Island Mojito
+                <span class="ml-2 text-xs bg-sea-teal/20 text-sea-teal px-2 py-1 rounded-full">🌿 Naxos Herbs</span>
+              </h3>
+              <p class="text-sm text-charcoal/70">White rum, fresh mint, lime, soda, local honey</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€9.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Cycladic Spritz</h3>
+              <p class="text-sm text-charcoal/70">Aperol, prosecco, orange, sparkling water</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€9.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classics -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-sea-teal/10 rounded-full flex items-center justify-center mr-4">
+            <span class="text-2xl">🥃</span>
+          </div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">Classics</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Old Fashioned</h3>
+              <p class="text-sm text-charcoal/70">Bourbon, sugar, bitters, orange</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€11.00</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Margarita</h3>
+              <p class="text-sm text-charcoal/70">Tequila, lime, triple sec, salt rim</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€10.00</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Espresso Martini</h3>
+              <p class="text-sm text-charcoal/70">Vodka, coffee liqueur, fresh espresso</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€10.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Gin & Tonic</h3>
+              <p class="text-sm text-charcoal/70">Premium gin, tonic, botanicals</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€9.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wines & Spirits -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4">
+            <span class="text-2xl">🍷</span>
+          </div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">Wines & Spirits</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-3">Wines by the Glass</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span>Greek White (Assyrtiko, Moschofilero)</span>
+                <span class="font-semibold text-garden-green">€6.50</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Greek Red (Xinomavro, Agiorgitiko)</span>
+                <span class="font-semibold text-garden-green">€6.50</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Rosé</span>
+                <span class="font-semibold text-garden-green">€6.00</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Prosecco</span>
+                <span class="font-semibold text-garden-green">€7.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-3">Spirits</h3>
+            <p class="text-sm text-charcoal/70">Ask our bartender for our full selection of whiskeys, rums, vodkas, and Greek spirits including ouzo, tsipouro, and raki.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Non-alcoholic -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-sea-teal/10 rounded-full flex items-center justify-center mr-4">
+            <span class="text-2xl">🥤</span>
+          </div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">Non-Alcoholic</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Virgin Mojito</h3>
+              <p class="text-sm text-charcoal/70">Fresh mint, lime, honey, soda</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€5.50</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Garden Lemonade</h3>
+              <p class="text-sm text-charcoal/70">Fresh lemon, herbs from our garden, sparkling water</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€5.00</span>
+          </div>
+
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Iced Teas</h3>
+              <p class="text-sm text-charcoal/70">Peach, lemon, or herbal blends</p>
+            </div>
+            <span class="text-lg font-semibold text-garden-green">€4.50</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Specials Banner -->
+  <section class="py-12 bg-gradient-to-r from-garden-green to-sea-teal text-cycladic-white">
+    <div class="container mx-auto px-4 text-center">
+      <h3 class="text-2xl font-serif font-bold mb-2">Daily Specials</h3>
+      <p class="text-lg">Ask our team about today's seasonal specials and chef's recommendations</p>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  const tabs = document.querySelectorAll('.menu-tab');
+  const sections = document.querySelectorAll('.menu-section');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const menuType = tab.getAttribute('data-menu');
+
+      // Update tab styles
+      tabs.forEach(t => {
+        t.classList.remove('text-garden-green', 'border-garden-green');
+        t.classList.add('text-charcoal/60', 'border-transparent');
+      });
+      tab.classList.remove('text-charcoal/60', 'border-transparent');
+      tab.classList.add('text-garden-green', 'border-garden-green');
+
+      // Show/hide sections
+      sections.forEach(section => {
+        if (section.id === `menu-${menuType}`) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <!-- Fresh brunch plate -->
+  <rect width="600" height="600" fill="#F5F5DC"/>
+
+  <!-- Plate -->
+  <circle cx="300" cy="300" r="200" fill="#FFFFFF"/>
+  <circle cx="300" cy="300" r="195" fill="#F8F8F8"/>
+
+  <!-- Avocado slices -->
+  <ellipse cx="250" cy="280" rx="40" ry="25" fill="#9ACD32" transform="rotate(-30 250 280)"/>
+  <ellipse cx="280" cy="260" rx="40" ry="25" fill="#9ACD32" transform="rotate(-15 280 260)"/>
+  <ellipse cx="310" cy="250" rx="40" ry="25" fill="#9ACD32"/>
+
+  <!-- Cherry tomatoes -->
+  <circle cx="350" cy="320" r="25" fill="#FF6347"/>
+  <circle cx="390" cy="310" r="25" fill="#FF6347"/>
+  <circle cx="370" cy="360" r="25" fill="#FF4500"/>
+
+  <!-- Feta cheese -->
+  <rect x="220" y="340" width="50" height="30" rx="5" fill="#FFFACD"/>
+  <rect x="280" y="350" width="45" height="25" rx="5" fill="#FFFACD"/>
+
+  <!-- Greens -->
+  <ellipse cx="300" cy="320" rx="15" ry="35" fill="#228B22" opacity="0.7"/>
+  <ellipse cx="320" cy="330" rx="12" ry="30" fill="#32CD32" opacity="0.7"/>
+  <ellipse cx="280" cy="310" rx="13" ry="32" fill="#228B22" opacity="0.7"/>
+
+  <!-- Olive oil drizzle -->
+  <circle cx="300" cy="300" r="8" fill="#DAA520" opacity="0.5"/>
+  <circle cx="320" cy="290" r="6" fill="#DAA520" opacity="0.5"/>
+  <circle cx="280" cy="295" r="7" fill="#DAA520" opacity="0.5"/>
+</svg>
+

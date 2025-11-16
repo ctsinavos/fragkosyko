@@ -1,0 +1,260 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const images = [
+  { id: 1, src: '/gallery/courtyard-morning.svg', category: 'daytime', alt: 'Courtyard in morning light' },
+  { id: 2, src: '/gallery/coffee-pastries.svg', category: 'daytime', alt: 'Coffee and pastries' },
+  { id: 3, src: '/gallery/fresh-brunch.svg', category: 'daytime', alt: 'Fresh brunch plate' },
+  { id: 4, src: '/gallery/garden-details.svg', category: 'details', alt: 'Garden plants and prickly pear' },
+  { id: 5, src: '/gallery/evening-cocktails.svg', category: 'evening', alt: 'Evening cocktails' },
+  { id: 6, src: '/gallery/sunset-views.svg', category: 'evening', alt: 'Sunset over Naxos' },
+  { id: 7, src: '/gallery/night-ambiance.svg', category: 'evening', alt: 'Night ambiance with lights' },
+  { id: 8, src: '/gallery/table-setting.svg', category: 'details', alt: 'Elegant table setting' },
+];
+---
+
+<Layout title="Gallery – Fragkosyko" description="Explore our hidden garden through images—from morning brunch to evening cocktails.">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="py-20 bg-gradient-to-br from-warm-sand/30 to-sea-teal/10">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif font-bold text-garden-green mb-6">
+        Gallery
+      </h1>
+      <p class="text-lg max-w-3xl mx-auto text-charcoal/80">
+        A visual journey through our garden—from sunlit mornings to starlit evenings
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Buttons -->
+  <section class="py-8 bg-white border-b border-warm-sand sticky top-[73px] z-40">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center space-x-4 flex-wrap gap-2">
+        <button
+          class="gallery-filter px-6 py-2 bg-garden-green text-cycladic-white rounded-full font-semibold transition-all hover:bg-garden-green-dark"
+          data-filter="all"
+        >
+          All
+        </button>
+        <button
+          class="gallery-filter px-6 py-2 bg-warm-sand/30 text-charcoal rounded-full font-semibold transition-all hover:bg-warm-sand"
+          data-filter="daytime"
+        >
+          Daytime
+        </button>
+        <button
+          class="gallery-filter px-6 py-2 bg-warm-sand/30 text-charcoal rounded-full font-semibold transition-all hover:bg-warm-sand"
+          data-filter="evening"
+        >
+          Evening
+        </button>
+        <button
+          class="gallery-filter px-6 py-2 bg-warm-sand/30 text-charcoal rounded-full font-semibold transition-all hover:bg-warm-sand"
+          data-filter="details"
+        >
+          Details
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="py-20 bg-cycladic-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto" id="gallery-grid">
+        {images.map((image) => (
+          <div
+            class="gallery-item aspect-square rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-lg hover:shadow-xl"
+            data-category={image.category}
+            data-id={image.id}
+            data-src={image.src}
+          >
+            <img src={image.src} alt={image.alt} class="w-full h-full object-cover" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black/90 z-[9999]" style="backdrop-filter: blur(10px);">
+    <button
+      id="close-lightbox"
+      class="fixed top-4 right-4 text-white hover:text-warm-sand transition-colors z-[10000] bg-black/70 rounded-full p-3 hover:bg-black/90"
+      aria-label="Close"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <button
+      id="prev-image"
+      class="fixed left-4 top-1/2 -translate-y-1/2 text-white hover:text-warm-sand transition-colors z-[10000] bg-black/70 rounded-full p-3 hover:bg-black/90"
+      aria-label="Previous"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+
+    <button
+      id="next-image"
+      class="fixed right-4 top-1/2 -translate-y-1/2 text-white hover:text-warm-sand transition-colors z-[10000] bg-black/70 rounded-full p-3 hover:bg-black/90"
+      aria-label="Next"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+
+    <div id="lightbox-content" class="w-full h-full flex items-center justify-center p-16">
+      <img
+        id="lightbox-image"
+        src="/gallery/courtyard-morning.svg"
+        alt="Gallery image"
+        class="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+        style="width: auto; height: auto;"
+      />
+    </div>
+  </div>
+
+  <!-- Instagram CTA -->
+  <section class="py-20 bg-gradient-to-br from-garden-green to-sea-teal text-cycladic-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
+        Follow Our Journey
+      </h2>
+      <p class="text-lg mb-8">
+        Share your moments with us @fragkosyko
+      </p>
+      <a
+        href="#"
+        class="inline-flex items-center px-8 py-3 bg-cycladic-white text-garden-green rounded-full hover:bg-warm-sand transition-all hover:shadow-lg font-semibold"
+      >
+        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        Follow on Instagram
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.gallery-filter');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+
+        // Update button styles
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-garden-green', 'text-cycladic-white');
+          btn.classList.add('bg-warm-sand/30', 'text-charcoal');
+        });
+        button.classList.remove('bg-warm-sand/30', 'text-charcoal');
+        button.classList.add('bg-garden-green', 'text-cycladic-white');
+
+        // Filter items
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
+    const closeLightbox = document.getElementById('close-lightbox');
+    let currentImageIndex = 0;
+    let visibleImages: Element[] = [];
+
+    function getVisibleImages() {
+      visibleImages = Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+      return visibleImages;
+    }
+
+    function updateLightboxImage() {
+      const visible = getVisibleImages();
+      if (visible.length === 0) {
+        console.log('No visible images');
+        return;
+      }
+
+      const currentItem = visible[currentImageIndex] as HTMLElement;
+      const src = currentItem.getAttribute('data-src');
+      const alt = currentItem.querySelector('img')?.getAttribute('alt');
+
+      console.log('Updating lightbox:', { src, alt, lightboxImage });
+
+      if (lightboxImage && src) {
+        lightboxImage.style.display = 'block';
+        lightboxImage.src = src;
+        lightboxImage.alt = alt || '';
+
+        // Force reload if needed
+        lightboxImage.onload = () => {
+          console.log('Image loaded successfully:', src);
+        };
+
+        lightboxImage.onerror = () => {
+          console.error('Image failed to load:', src);
+        };
+
+        console.log('Lightbox image updated:', src, 'Element:', lightboxImage);
+      } else {
+        console.error('Missing lightboxImage or src:', { lightboxImage, src });
+      }
+    }
+
+    galleryItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const visible = getVisibleImages();
+        currentImageIndex = visible.indexOf(item);
+
+        if (currentImageIndex === -1) currentImageIndex = 0;
+
+        updateLightboxImage();
+        lightbox?.classList.remove('hidden');
+      });
+    });
+
+    closeLightbox?.addEventListener('click', () => {
+      lightbox?.classList.add('hidden');
+    });
+
+    document.getElementById('prev-image')?.addEventListener('click', () => {
+      const visible = getVisibleImages();
+      currentImageIndex = (currentImageIndex - 1 + visible.length) % visible.length;
+      updateLightboxImage();
+    });
+
+    document.getElementById('next-image')?.addEventListener('click', () => {
+      const visible = getVisibleImages();
+      currentImageIndex = (currentImageIndex + 1) % visible.length;
+      updateLightboxImage();
+    });
+
+    // Close lightbox on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        lightbox?.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
