@@ -4,13 +4,33 @@ export default {
   theme: {
     extend: {
       colors: {
-        'garden-green': '#4B7251',
-        'garden-green-dark': '#405F45',
-        'sea-teal': '#3F7F87',
-        'prickly-pear': '#C8575A',
-        'cycladic-white': '#F8F5F0',
-        'warm-sand': '#E0C9A6',
-        'charcoal': '#2D2A28',
+        // Primary Brand Colors
+        'primary': '#9b392b',           // Terracotta Red - main brand
+        'primary-dark': '#A84739',      // Darker terracotta for hovers
+        'secondary': '#e4712b',         // Burnt Orange - secondary actions
+        'secondary-dark': '#D17330',    // Darker orange for hovers
+
+        // Accent Colors
+        'accent-bright': '#f8cb48',     // Golden Yellow - highlights
+        'accent-fresh': '#d9e35a',      // Lime Green - success/fresh
+
+        // Text Colors
+        'text-primary': '#4c2e20',      // Dark Brown - main text
+        'text-secondary': '#a8703b',    // Medium Brown - muted text
+        'text-dark': '#2B2828',         // Charcoal - high contrast text
+
+        // Surface & Background Colors
+        'surface': '#D4A888',           // Tan - cards, subtle backgrounds
+        'background': '#F5F4F0',        // Off-White - page background
+
+        // Legacy aliases (for gradual migration)
+        'garden-green': '#9b392b',      // Now maps to primary
+        'garden-green-dark': '#A84739', // Now maps to primary-dark
+        'sea-teal': '#e4712b',          // Now maps to secondary
+        'prickly-pear': '#9b392b',      // Now maps to primary
+        'cycladic-white': '#F5F4F0',    // Now maps to background
+        'warm-sand': '#D4A888',         // Now maps to surface
+        'charcoal': '#4c2e20',          // Now maps to text-primary
       },
       fontFamily: {
         'serif': ['Tinos', 'serif'],
@@ -20,25 +40,5 @@ export default {
     },
   },
   plugins: [],
-}
-{
-  "name": "fragkosyko",
-  "type": "module",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.0.0",
-    "tailwindcss": "^3.4.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7"
-  }
 }
 
