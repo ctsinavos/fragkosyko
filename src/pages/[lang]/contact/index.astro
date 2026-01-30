@@ -202,7 +202,10 @@ const t = useTranslations(lang);
 
     try {
       const formData = new FormData(form);
-      const response = await fetch('/', {
+      // Ensure form-name is explicitly set
+      formData.set('form-name', 'contact');
+
+      const response = await fetch(form.action || '/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString()

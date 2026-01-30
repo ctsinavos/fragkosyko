@@ -2,8 +2,32 @@
 // Redirect root to default language
 import { defaultLang } from '../i18n/translations';
 ---
-<meta http-equiv="refresh" content={`0;url=/${defaultLang}/`} />
-<script is:inline define:vars={{ defaultLang }}>
-  window.location.href = `/${defaultLang}/`;
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content={`0;url=/${defaultLang}/`} />
+</head>
+<body>
+  <!-- Hidden forms for Netlify form detection -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
+
+  <form name="reservations" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <input type="date" name="date" />
+    <input type="text" name="time" />
+    <input type="text" name="guests" />
+    <textarea name="message"></textarea>
+  </form>
+
+  <script is:inline define:vars={{ defaultLang }}>
+    window.location.href = `/${defaultLang}/`;
+  </script>
+</body>
+</html>
 
