@@ -15,6 +15,21 @@ const t = useTranslations(lang);
 <Layout title={t('reservations.meta.title')} description={t('reservations.meta.description')}>
   <Header />
 
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-4 right-4 z-50 transform translate-x-full opacity-0 transition-all duration-300 max-w-md">
+    <div id="toast-content" class="rounded-2xl shadow-2xl p-6 flex items-start gap-4">
+      <div id="toast-icon" class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"></div>
+      <div class="flex-1">
+        <p id="toast-message" class="text-sm font-medium"></p>
+      </div>
+      <button id="toast-close" class="flex-shrink-0 text-charcoal/50 hover:text-charcoal transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
   <section class="py-20 bg-gradient-to-br from-warm-sand/30 to-sea-teal/10">
     <div class="container mx-auto px-4 text-center">
       <h1 class="text-5xl md:text-6xl font-serif font-bold text-garden-green mb-6">{t('reservations.hero.title')}</h1>
@@ -32,7 +47,7 @@ const t = useTranslations(lang);
           </p>
         </div>
 
-        <form class="bg-white rounded-2xl shadow-xl p-8 md:p-12" name="reservations" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <form id="reservation-form" class="bg-white rounded-2xl shadow-xl p-8 md:p-12" name="reservations" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="reservations" />
           <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
@@ -146,4 +161,67 @@ const t = useTranslations(lang);
 
   <Footer />
 </Layout>
+
+<script define:vars={{ successMessage: t('toast.reservationSuccess'), errorMessage: t('toast.error') }}>
+  const form = document.getElementById('reservation-form');
+  const toast = document.getElementById('toast');
+  const toastContent = document.getElementById('toast-content');
+  const toastIcon = document.getElementById('toast-icon');
+  const toastMessage = document.getElementById('toast-message');
+  const toastClose = document.getElementById('toast-close');
+
+  function showToast(message, isSuccess = true) {
+    if (isSuccess) {
+      toastContent.className = 'rounded-2xl shadow-2xl p-6 flex items-start gap-4 bg-garden-green/10 border border-garden-green/30';
+      toastIcon.className = 'flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-garden-green';
+      toastIcon.innerHTML = '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+    } else {
+      toastContent.className = 'rounded-2xl shadow-2xl p-6 flex items-start gap-4 bg-red-50 border border-red-200';
+      toastIcon.className = 'flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-red-500';
+      toastIcon.innerHTML = '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+    }
+    toastMessage.textContent = message;
+    toast.classList.remove('translate-x-full', 'opacity-0');
+
+    setTimeout(() => {
+      hideToast();
+    }, 6000);
+  }
+
+  function hideToast() {
+    toast.classList.add('translate-x-full', 'opacity-0');
+  }
+
+  toastClose.addEventListener('click', hideToast);
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = '...';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (response.ok) {
+        showToast(successMessage, true);
+        form.reset();
+      } else {
+        showToast(errorMessage, false);
+      }
+    } catch (error) {
+      showToast(errorMessage, false);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+</script>
 

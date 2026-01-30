@@ -494,6 +494,11 @@
     "optional": "Optional",
     "phone": "+30 228 501 2345",
     "emailAddress": "info@fragkosiko.com"
+  },
+  "toast": {
+    "reservationSuccess": "Thank you! Your reservation request has been submitted. We'll confirm via email within 24 hours.",
+    "contactSuccess": "Thank you for your message! We'll get back to you soon.",
+    "error": "Something went wrong. Please try again or contact us directly."
   }
 }
 
