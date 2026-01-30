@@ -1,0 +1,499 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "gallery": "Gallery",
+    "reservations": "Reservations",
+    "contact": "Contact",
+    "bookTable": "Book a Table"
+  },
+  "footer": {
+    "tagline": "From sunlit brunch to starlit cocktails in our hidden garden.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "openingHours": "Opening Hours",
+    "daily": "Daily: 8:00 AM - 12:00 AM",
+    "copyright": "Fragkosiko. All rights reserved.",
+    "location": "Naxos, Greece"
+  },
+  "home": {
+    "hero": {
+      "title": "A Hidden Garden in the Heart of Naxos",
+      "description": "By day, Fragkosiko is your sunlit escape for artisanal coffee and fresh, locally inspired brunch. By night, the courtyard glows with warm light, crafted cocktails, and a relaxed island atmosphere. Step into our garden and experience Naxos hospitality from morning to midnight.",
+      "bookTable": "Book a Table",
+      "viewMenu": "View Menu"
+    },
+    "dayNight": {
+      "title": "From Dawn to Dusk",
+      "subtitle": "Experience the transformation of our garden courtyard throughout the day",
+      "brunch": {
+        "title": "Brunch & Coffee",
+        "description": "Artisanal coffee, freshly baked pastries, eggs made your way, seasonal fruits, and dishes inspired by local Naxos ingredients. Start your day in our sun-dappled courtyard.",
+        "hours": "8:00 AM - 2:00 PM"
+      },
+      "cocktails": {
+        "title": "Cocktails & Evenings",
+        "description": "Signature cocktails inspired by island herbs, curated wines, ambient music, and a relaxed atmosphere. Watch the courtyard transform under soft lights and starlit skies.",
+        "hours": "6:00 PM - 12:00 AM"
+      }
+    },
+    "highlights": {
+      "title": "Signature Highlights",
+      "subtitle": "A taste of what awaits you",
+      "naxosShakshuka": {
+        "title": "Naxos Shakshuka",
+        "description": "Farm eggs poached in spiced tomato sauce with local feta, served with crusty bread"
+      },
+      "aegeanSpritz": {
+        "title": "Aegean Spritz",
+        "description": "Our signature cocktail with mastiha, citrus, prosecco, and a hint of thyme"
+      },
+      "gardenBowl": {
+        "title": "Garden Bowl",
+        "description": "Fresh seasonal greens, grains, avocado, and herbs from our courtyard garden"
+      },
+      "islandColdBrew": {
+        "title": "Island Cold Brew",
+        "description": "Smooth Greek coffee, locally roasted, served over ice"
+      },
+      "aegeanSunset": {
+        "title": "Aegean Sunset",
+        "description": "Ouzo, citrus, honey, and a hint of lavender"
+      },
+      "avocadoToast": {
+        "title": "Garden Avocado Toast",
+        "description": "Sourdough, smashed avocado, cherry tomatoes, feta, olive oil"
+      },
+      "greekPastryBoard": {
+        "title": "Greek Pastry Board",
+        "description": "Fresh bougatsa, koulouri, and local honey from Naxos bees"
+      },
+      "fragkosikoSour": {
+        "title": "Fragkosiko Sour",
+        "description": "Gin, prickly pear, lemon, and wild thyme from our garden"
+      }
+    },
+    "cta": {
+      "title": "Ready to Visit?",
+      "subtitle": "Reserve your spot in our garden or simply walk in—we're in the heart of Naxos Town.",
+      "makeReservation": "Make a Reservation",
+      "getDirections": "Get Directions"
+    },
+    "courtyard": {
+      "sectionLabel": "Our Space",
+      "title": "The Hidden Courtyard",
+      "subtitle": "A sanctuary in the heart of Naxos where Cycladic charm meets modern comfort",
+      "image1": {
+        "title": "Morning Serenity",
+        "description": "Start your day in our sun-dappled garden"
+      },
+      "image2": {
+        "title": "Evening Magic",
+        "description": "Intimate lighting & atmosphere"
+      },
+      "features": {
+        "design": {
+          "title": "Cycladic Design",
+          "description": "Traditional whitewashed walls and arches create an authentic island atmosphere"
+        },
+        "light": {
+          "title": "Natural Light",
+          "description": "Perfectly positioned to catch the Mediterranean sun from morning to evening"
+        },
+        "greenery": {
+          "title": "Lush Greenery",
+          "description": "Plants and herbs surround every table, creating a true garden dining experience"
+        }
+      }
+    },
+    "moments": {
+      "title": "Moments from the Garden",
+      "subtitle": "Follow our journey on Instagram"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About – Fragkosiko",
+      "description": "Discover the story behind our hidden garden restaurant in Naxos, Greece."
+    },
+    "hero": {
+      "title": "Our Story",
+      "subtitle": "A celebration of Naxos, its flavors, and the art of island hospitality"
+    },
+    "story": {
+      "p1": "Fragkosiko was born from a love of Naxos—its sun-soaked mornings, its vibrant evenings, and the way life here moves between the energy of the day and the calm of the night. We wanted to create a space that captures this rhythm, a hidden garden where locals and travelers alike can gather, relax, and savor the island's best.",
+      "p2": "Tucked away in the heart of Naxos Town, our courtyard is an oasis—whitewashed walls, lush greenery, and the kind of light that shifts beautifully from morning to midnight. By day, it's the perfect spot for a leisurely brunch and a perfectly brewed coffee. By night, the space transforms into an intimate setting for cocktails, conversation, and connection.",
+      "p3": "Every detail, from the seasonal menu to the thoughtfully curated drinks, reflects our commitment to celebrating local producers, traditional flavors, and the warm hospitality that Naxos is known for. We invite you to step into our garden and experience it for yourself."
+    },
+    "name": {
+      "title": "The Name \"Fragkosiko\"",
+      "p1": "Fragkosiko (Φραγκόσυκο) is the Greek word for the prickly pear cactus, a plant deeply rooted in the landscape and culture of the Greek islands. Its bright pink fruit and resilient nature have made it a symbol of the Mediterranean—beautiful, enduring, and bursting with flavor.",
+      "p2": "The prickly pear inspired not only our name but also our visual identity and flavor philosophy. You'll see its colors woven throughout our space—the soft greens of the cactus pads, the vibrant pink of the fruit, and the warm earth tones of the Cycladic landscape.",
+      "p3": "Like the fragkosiko, our restaurant is about thriving in balance—honoring tradition while embracing the new, offering a welcoming presence in a beautiful, sometimes unexpected place."
+    },
+    "philosophy": {
+      "title": "Our Philosophy",
+      "local": {
+        "title": "Local Ingredients",
+        "description": "We source from Naxos farmers, fishermen, and producers whenever possible, bringing the island's bounty to your plate."
+      },
+      "craft": {
+        "title": "Crafted with Care",
+        "description": "Every dish and drink is made with attention and intention, from our hand-pressed juices to our signature cocktails."
+      },
+      "community": {
+        "title": "Community Spirit",
+        "description": "We believe in creating a welcoming space for everyone—locals, travelers, families, and friends."
+      },
+      "sustainable": {
+        "title": "Sustainable Practices",
+        "description": "From reducing waste to supporting local ecosystems, we're committed to caring for our island home."
+      }
+    },
+    "team": {
+      "title": "Meet the Team",
+      "subtitle": "The people behind the garden",
+      "member1": {
+        "name": "Dimitris Molindris",
+        "role": "Co-Founder & Head Chef",
+        "bio": "Born and raised in Naxos, Dimitris brings his grandmother's recipes and a modern twist to every dish."
+      },
+      "member2": {
+        "name": "Christos Lagios",
+        "role": "Co-Founder & Bar Manager",
+        "bio": "A cocktail enthusiast with a passion for local herbs and island-inspired flavors."
+      },
+      "member3": {
+        "name": "Christos Oikonomou",
+        "role": "Co-Founder & Operations",
+        "bio": "With a background in hospitality, Christos ensures every guest feels at home in our garden."
+      }
+    },
+    "experience": {
+      "title": "Experience Our Garden",
+      "subtitle": "Visit us for brunch, coffee, or evening cocktails",
+      "cta": "Make a Reservation"
+    }
+  },
+  "menu": {
+    "meta": {
+      "title": "Menu – Fragkosiko",
+      "description": "Explore our brunch menu, signature cocktails, and locally-inspired dishes from Naxos."
+    },
+    "hero": {
+      "title": "Our Menu",
+      "subtitle": "Our menus change with the seasons, celebrating local producers and Naxos flavors. Every dish and drink is crafted with care, from sunrise brunch to starlit cocktails."
+    },
+    "tabs": {
+      "brunch": "Brunch & Daytime",
+      "cocktails": "Cocktails & Drinks"
+    },
+    "coffee": {
+      "title": "Coffee & Beverages",
+      "greekCoffee": {
+        "name": "Greek Coffee",
+        "description": "Traditional, rich, and aromatic"
+      },
+      "espresso": {
+        "name": "Espresso / Cappuccino / Latte",
+        "description": "Locally roasted beans, expertly crafted"
+      },
+      "coldBrew": {
+        "name": "Island Cold Brew",
+        "description": "Smooth, refreshing, served over ice"
+      },
+      "juices": {
+        "name": "Fresh Juices",
+        "description": "Orange, grapefruit, seasonal fruits"
+      },
+      "teas": {
+        "name": "Herbal Teas",
+        "description": "Greek mountain tea, chamomile, mint from our garden"
+      }
+    },
+    "pastries": {
+      "title": "Bites & Pastries",
+      "yogurt": {
+        "name": "Greek Yogurt Bowl",
+        "description": "With local honey, walnuts, and seasonal fruit"
+      },
+      "croissant": {
+        "name": "Butter Croissant",
+        "description": "Freshly baked, flaky perfection"
+      },
+      "bougatsa": {
+        "name": "Bougatsa",
+        "description": "Traditional custard pastry with cinnamon"
+      },
+      "toast": {
+        "name": "Avocado Toast",
+        "description": "Sourdough, cherry tomatoes, feta crumble, olive oil"
+      }
+    },
+    "brunch": {
+      "title": "Brunch Plates",
+      "shakshuka": {
+        "name": "Naxos Shakshuka",
+        "description": "Farm eggs in spiced tomato sauce, local feta, crusty bread"
+      },
+      "omelette": {
+        "name": "Garden Omelette",
+        "description": "Free-range eggs, seasonal vegetables, herbs, graviera cheese"
+      },
+      "pancakes": {
+        "name": "Fluffy Pancakes",
+        "description": "With honey, fresh berries, and Greek yogurt"
+      },
+      "bowl": {
+        "name": "Mediterranean Bowl",
+        "description": "Quinoa, hummus, roasted vegetables, tahini dressing"
+      },
+      "eggs": {
+        "name": "Eggs Your Way",
+        "description": "Poached, scrambled, or fried with toast and greens"
+      }
+    },
+    "cocktails": {
+      "title": "Signature Cocktails",
+      "aegeanSpritz": {
+        "name": "Aegean Spritz",
+        "description": "Mastiha, citrus, prosecco, thyme"
+      },
+      "naxosMule": {
+        "name": "Naxos Mule",
+        "description": "Local citron liqueur, ginger beer, lime"
+      },
+      "gardenGin": {
+        "name": "Garden Gin & Tonic",
+        "description": "Premium gin, Mediterranean tonic, rosemary, cucumber"
+      },
+      "sunsetNegroni": {
+        "name": "Sunset Negroni",
+        "description": "Gin, Campari, sweet vermouth, orange twist"
+      },
+      "pricklyPear": {
+        "name": "Prickly Pear Margarita",
+        "description": "Tequila, prickly pear syrup, lime, salt rim"
+      }
+    },
+    "wines": {
+      "title": "Wine & Beer",
+      "localWhite": {
+        "name": "Naxos White Wine",
+        "description": "Crisp, citrus notes, local vineyard"
+      },
+      "localRed": {
+        "name": "Naxos Red Wine",
+        "description": "Medium body, berry notes, earthy finish"
+      },
+      "prosecco": {
+        "name": "Prosecco",
+        "description": "By the glass"
+      },
+      "craftBeer": {
+        "name": "Greek Craft Beer",
+        "description": "Rotating selection"
+      }
+    },
+    "nonAlcoholic": {
+      "title": "Non-Alcoholic",
+      "lemonade": {
+        "name": "House Lemonade",
+        "description": "Fresh-squeezed, honey, mint"
+      },
+      "icedTea": {
+        "name": "Hibiscus Iced Tea",
+        "description": "Refreshing, lightly sweetened"
+      },
+      "smoothie": {
+        "name": "Seasonal Smoothie",
+        "description": "Fresh fruits, Greek yogurt"
+      },
+      "mocktail": {
+        "name": "Garden Mocktail",
+        "description": "Cucumber, elderflower, sparkling water"
+      }
+    },
+    "dailySpecials": {
+      "title": "Daily Specials",
+      "description": "Ask our team about today's seasonal specials and chef's recommendations"
+    }
+  },
+  "gallery": {
+    "meta": {
+      "title": "Gallery – Fragkosiko",
+      "description": "Explore the ambiance of our hidden garden in Naxos through our photo gallery."
+    },
+    "hero": {
+      "title": "Our Gallery",
+      "subtitle": "A glimpse into our hidden garden, from morning light to evening glow"
+    },
+    "filters": {
+      "all": "All",
+      "daytime": "Daytime",
+      "evening": "Evening",
+      "details": "Details"
+    },
+    "images": {
+      "courtyardMorning": {
+        "title": "Morning in the Courtyard",
+        "alt": "Sunny courtyard with tables and greenery"
+      },
+      "freshBrunch": {
+        "title": "Fresh Brunch",
+        "alt": "Delicious brunch plate with eggs and vegetables"
+      },
+      "coffeePastries": {
+        "title": "Coffee & Pastries",
+        "alt": "Artisanal coffee with fresh pastries"
+      },
+      "sunsetViews": {
+        "title": "Sunset Views",
+        "alt": "Beautiful sunset view from the garden"
+      },
+      "eveningCocktails": {
+        "title": "Evening Cocktails",
+        "alt": "Signature cocktails in evening light"
+      },
+      "nightAmbiance": {
+        "title": "Night Ambiance",
+        "alt": "Warm lighting and cozy atmosphere at night"
+      },
+      "tableSetting": {
+        "title": "Table Setting",
+        "alt": "Elegantly set table with Mediterranean touches"
+      },
+      "gardenDetails": {
+        "title": "Garden Details",
+        "alt": "Lush plants and decorative details"
+      }
+    },
+    "followJourney": {
+      "title": "Follow Our Journey",
+      "subtitle": "Stay connected with us on social media for daily updates, behind-the-scenes moments, and special announcements.",
+      "instagram": "Follow us on Instagram"
+    }
+  },
+  "reservations": {
+    "meta": {
+      "title": "Reservations – Fragkosiko",
+      "description": "Book your table in our hidden garden. Reserve your spot for brunch or evening cocktails."
+    },
+    "hero": {
+      "title": "Reserve Your Table",
+      "subtitle": "Book your spot in our garden. Whether it's a sunlit brunch or an evening under the stars, we're ready to welcome you."
+    },
+    "form": {
+      "groupInfo": "For groups of 8 or more,",
+      "callUs": "please call us directly at",
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "date": "Date",
+      "time": "Time",
+      "selectTime": "Select time",
+      "guests": "Number of Guests",
+      "selectGuests": "Select guests",
+      "guest": "guest",
+      "guests_plural": "guests",
+      "occasion": "Occasion (Optional)",
+      "selectOccasion": "Select occasion",
+      "occasions": {
+        "casual": "Casual visit",
+        "birthday": "Birthday",
+        "anniversary": "Anniversary",
+        "date": "Date night",
+        "business": "Business meeting",
+        "other": "Other"
+      },
+      "specialRequests": "Special Requests",
+      "specialRequestsPlaceholder": "Dietary restrictions, seating preferences, etc.",
+      "submit": "Request Reservation",
+      "brunch": "Brunch",
+      "evening": "Evening",
+      "required": "required"
+    },
+    "info": {
+      "title": "Good to Know",
+      "confirmation": {
+        "title": "Confirmation",
+        "description": "We'll confirm your reservation via email within 24 hours."
+      },
+      "walkIns": {
+        "title": "Walk-ins Welcome",
+        "description": "No reservation? No problem. We always keep some tables available."
+      },
+      "cancellation": {
+        "title": "Cancellation",
+        "description": "Please let us know at least 2 hours in advance if plans change."
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact – Fragkosiko",
+      "description": "Get in touch with us. Find our location in Naxos, opening hours, and contact details."
+    },
+    "hero": {
+      "title": "Get in Touch",
+      "subtitle": "We'd love to hear from you. Visit us in Naxos, give us a call, or send a message."
+    },
+    "info": {
+      "visitTitle": "Visit Our Garden",
+      "location": "Location",
+      "address": {
+        "line1": "Central Naxos Town",
+        "line2": "Naxos, Cyclades",
+        "line3": "Greece, 84300"
+      },
+      "phone": "Phone",
+      "email": "Email",
+      "openingHours": "Opening Hours",
+      "daily": "Daily: 8:00 AM - 12:00 AM",
+      "brunchHours": "Brunch: 8:00 AM - 2:00 PM",
+      "eveningHours": "Evening: 6:00 PM - 12:00 AM",
+      "followUs": "Follow Us",
+      "findUs": "Find Us"
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "subtitle": "Have a question or special request? Drop us a line and we'll get back to you soon.",
+      "name": "Your Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send Message"
+    },
+    "gettingHere": {
+      "title": "Getting Here",
+      "subtitle": "We're located in the heart of Naxos Town, just a short walk from the port.",
+      "byFoot": {
+        "title": "On Foot",
+        "description": "5-minute walk from Naxos Port, through the charming old town streets"
+      },
+      "byBus": {
+        "title": "By Bus",
+        "description": "Bus stop 'Naxos Center' is just 2 minutes away"
+      },
+      "byTaxi": {
+        "title": "By Taxi",
+        "description": "Tell your driver 'Fragkosiko' - we're well known locally!"
+      }
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "required": "Required field",
+    "optional": "Optional",
+    "phone": "+30 228 501 2345",
+    "emailAddress": "info@fragkosiko.com"
+  }
+}
+

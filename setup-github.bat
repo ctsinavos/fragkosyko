@@ -1,6 +1,6 @@
 @echo off
 echo ========================================
-echo Fragkosyko - GitHub Setup Script
+echo Fragkosiko - GitHub Setup Script
 echo ========================================
 echo.
 

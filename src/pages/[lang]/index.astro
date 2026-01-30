@@ -1,0 +1,255 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations, getLocalizedPath, languages, type Lang } from '../../i18n/translations';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+---
+
+<Layout title={`Fragkosiko – ${t('home.hero.title')}`}>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-warm-sand/30 to-sea-teal/20">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-garden-green rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-sea-teal rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative container mx-auto px-4 text-center">
+      <h1 class="text-5xl md:text-7xl font-serif font-bold text-garden-green mb-6">{t('home.hero.title')}</h1>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-charcoal leading-relaxed">{t('home.hero.description')}</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={getLocalizedPath('/reservations', lang)} class="px-8 py-3 bg-garden-green text-cycladic-white rounded-full hover:bg-garden-green-dark transition-all hover:shadow-lg text-lg font-semibold">{t('home.hero.bookTable')}</a>
+        <a href={getLocalizedPath('/menu', lang)} class="px-8 py-3 border border-garden-green text-garden-green bg-transparent rounded-full hover:bg-cycladic-white transition-all text-lg font-semibold">{t('home.hero.viewMenu')}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Day to Night -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-4 text-garden-green">{t('home.dayNight.title')}</h2>
+      <p class="text-center text-lg text-charcoal/70 mb-12 max-w-2xl mx-auto">{t('home.dayNight.subtitle')}</p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="bg-warm-sand/20 rounded-2xl p-8 hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-garden-green/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-garden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          </div>
+          <h3 class="text-2xl font-serif font-bold text-center mb-4 text-garden-green">{t('home.dayNight.brunch.title')}</h3>
+          <p class="text-center text-charcoal/80 leading-relaxed">{t('home.dayNight.brunch.description')}</p>
+          <div class="mt-6 text-center"><span class="text-sm font-semibold text-sea-teal">{t('home.dayNight.brunch.hours')}</span></div>
+        </div>
+        <div class="bg-sea-teal/10 rounded-2xl p-8 hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-sea-teal/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-sea-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+          </div>
+          <h3 class="text-2xl font-serif font-bold text-center mb-4 text-sea-teal">{t('home.dayNight.cocktails.title')}</h3>
+          <p class="text-center text-charcoal/80 leading-relaxed">{t('home.dayNight.cocktails.description')}</p>
+          <div class="mt-6 text-center"><span class="text-sm font-semibold text-sea-teal">{t('home.dayNight.cocktails.hours')}</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section class="py-20 bg-cycladic-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-4 text-garden-green">{t('home.highlights.title')}</h2>
+      <p class="text-center text-lg text-charcoal/70 mb-12">{t('home.highlights.subtitle')}</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-warm-sand/30 relative">
+          <div class="absolute top-4 right-4 bg-accent-bright text-text-dark px-3 py-1 rounded-full text-xs font-bold shadow-md z-10">CHEF'S SPECIAL</div>
+          <div class="h-48 bg-warm-sand/10 flex items-center justify-center"><span class="text-8xl">🍳</span></div>
+          <div class="p-6">
+            <h3 class="text-xl font-serif font-bold mb-2 text-garden-green">{t('home.highlights.naxosShakshuka.title')}</h3>
+            <p class="text-sm text-charcoal/70">{t('home.highlights.naxosShakshuka.description')}</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-warm-sand/30 relative">
+          <div class="absolute top-4 right-4 bg-accent-fresh text-text-dark px-3 py-1 rounded-full text-xs font-bold shadow-md z-10">SIGNATURE</div>
+          <div class="h-48 bg-warm-sand/10 flex items-center justify-center"><span class="text-8xl">🍸</span></div>
+          <div class="p-6">
+            <h3 class="text-xl font-serif font-bold mb-2 text-garden-green">{t('home.highlights.fragkosikoSour.title')}</h3>
+            <p class="text-sm text-charcoal/70">{t('home.highlights.fragkosikoSour.description')}</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-warm-sand/30 relative">
+          <div class="absolute top-4 right-4 bg-accent-bright text-text-dark px-3 py-1 rounded-full text-xs font-bold shadow-md z-10">POPULAR</div>
+          <div class="h-48 bg-warm-sand/10 flex items-center justify-center"><span class="text-8xl">🥐</span></div>
+          <div class="p-6">
+            <h3 class="text-xl font-serif font-bold mb-2 text-garden-green">{t('home.highlights.greekPastryBoard.title')}</h3>
+            <p class="text-sm text-charcoal/70">{t('home.highlights.greekPastryBoard.description')}</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-warm-sand/30">
+          <div class="h-48 bg-warm-sand/10 flex items-center justify-center"><span class="text-8xl">☕</span></div>
+          <div class="p-6">
+            <h3 class="text-xl font-serif font-bold mb-2 text-garden-green">{t('home.highlights.islandColdBrew.title')}</h3>
+            <p class="text-sm text-charcoal/70">{t('home.highlights.islandColdBrew.description')}</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-warm-sand/30">
+          <div class="h-48 bg-warm-sand/10 flex items-center justify-center"><span class="text-8xl">🍹</span></div>
+          <div class="p-6">
+            <h3 class="text-xl font-serif font-bold mb-2 text-garden-green">{t('home.highlights.aegeanSunset.title')}</h3>
+            <p class="text-sm text-charcoal/70">{t('home.highlights.aegeanSunset.description')}</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-warm-sand/30">
+          <div class="h-48 bg-warm-sand/10 flex items-center justify-center"><span class="text-8xl">🥑</span></div>
+          <div class="p-6">
+            <h3 class="text-xl font-serif font-bold mb-2 text-garden-green">{t('home.highlights.avocadoToast.title')}</h3>
+            <p class="text-sm text-charcoal/70">{t('home.highlights.avocadoToast.description')}</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href={getLocalizedPath('/menu', lang)} class="inline-block px-8 py-3 bg-garden-green text-cycladic-white rounded-full hover:bg-garden-green-dark transition-all hover:shadow-lg font-semibold">{t('home.hero.viewMenu')}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Courtyard -->
+  <section class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-warm-sand/20 via-cycladic-white to-sea-teal/10"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-garden-green/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-prickly-pear/5 rounded-full blur-3xl"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <div class="inline-block mb-4">
+          <span class="text-sm font-semibold tracking-wider uppercase text-sea-teal bg-sea-teal/10 px-4 py-2 rounded-full">{t('home.courtyard.sectionLabel')}</span>
+        </div>
+        <h2 class="text-5xl md:text-6xl font-serif font-bold mb-6 text-garden-green">{t('home.courtyard.title')}</h2>
+        <p class="text-xl text-charcoal/80 leading-relaxed">{t('home.courtyard.subtitle')}</p>
+      </div>
+
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-8 mb-8">
+          <div class="relative group">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+              <img src="/gallery/courtyard-morning.svg" alt="Morning light in the courtyard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent rounded-3xl flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="text-white">
+                <h3 class="text-2xl font-serif font-bold mb-2">{t('home.courtyard.image1.title')}</h3>
+                <p class="text-white/90">{t('home.courtyard.image1.description')}</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative group">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+              <img src="/gallery/night-ambiance.svg" alt="Evening courtyard ambiance" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent rounded-3xl flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="text-white">
+                <h3 class="text-2xl font-serif font-bold mb-2">{t('home.courtyard.image2.title')}</h3>
+                <p class="text-white/90">{t('home.courtyard.image2.description')}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-warm-sand/30">
+            <div class="w-14 h-14 bg-gradient-to-br from-garden-green to-garden-green-dark rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-serif font-bold mb-3 text-garden-green">{t('home.courtyard.features.design.title')}</h3>
+            <p class="text-charcoal/70 leading-relaxed">{t('home.courtyard.features.design.description')}</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-warm-sand/30">
+            <div class="w-14 h-14 bg-gradient-to-br from-sea-teal to-sea-teal/80 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-serif font-bold mb-3 text-sea-teal">{t('home.courtyard.features.light.title')}</h3>
+            <p class="text-charcoal/70 leading-relaxed">{t('home.courtyard.features.light.description')}</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-warm-sand/30">
+            <div class="w-14 h-14 bg-gradient-to-br from-prickly-pear to-prickly-pear/80 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+            </div>
+            <h3 class="text-xl font-serif font-bold mb-3 text-prickly-pear">{t('home.courtyard.features.greenery.title')}</h3>
+            <p class="text-charcoal/70 leading-relaxed">{t('home.courtyard.features.greenery.description')}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto bg-garden-green text-cycladic-white rounded-3xl p-12 shadow-2xl">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">{t('home.cta.title')}</h2>
+            <p class="text-cycladic-white/80 mb-8">{t('home.cta.subtitle')}</p>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <svg class="w-6 h-6 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div><p class="font-semibold">{t('footer.openingHours')}</p><p class="text-cycladic-white/80">{t('footer.daily')}</p></div>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <div><p class="font-semibold">{t('contact.info.location')}</p><p class="text-cycladic-white/80">{t('footer.location')}</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <a href={getLocalizedPath('/reservations', lang)} class="block text-center px-8 py-4 bg-cycladic-white text-garden-green rounded-full hover:bg-warm-sand transition-all font-semibold text-lg shadow-lg">{t('home.cta.makeReservation')}</a>
+            <a href={getLocalizedPath('/contact', lang)} class="block text-center px-8 py-4 border-2 border-cycladic-white text-cycladic-white bg-transparent rounded-full hover:bg-cycladic-white/10 transition-all font-semibold">{t('home.cta.getDirections')}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social & Gallery Preview -->
+  <section class="py-20 bg-cycladic-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-4 text-garden-green">{t('home.moments.title')}</h2>
+      <p class="text-center text-lg text-charcoal/70 mb-12">{t('home.moments.subtitle')}</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-8">
+        <div class="aspect-square rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-md">
+          <img src="/gallery/courtyard-morning.svg" alt="Courtyard in morning light" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-md">
+          <img src="/gallery/coffee-pastries.svg" alt="Coffee and pastries" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-md">
+          <img src="/gallery/fresh-brunch.svg" alt="Fresh brunch plate" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-md">
+          <img src="/gallery/garden-details.svg" alt="Garden plants and prickly pear" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-md">
+          <img src="/gallery/evening-cocktails.svg" alt="Evening cocktails" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-md">
+          <img src="/gallery/sunset-views.svg" alt="Sunset over Naxos" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-md">
+          <img src="/gallery/night-ambiance.svg" alt="Night ambiance with lights" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-md">
+          <img src="/gallery/table-setting.svg" alt="Elegant table setting" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href={getLocalizedPath('/gallery', lang)} class="inline-block px-8 py-3 border-2 border-garden-green text-garden-green bg-transparent rounded-full hover:bg-garden-green hover:text-white transition-all font-semibold hover:shadow-lg">{t('common.viewAll')}</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+

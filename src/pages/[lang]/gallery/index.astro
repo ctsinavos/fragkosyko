@@ -1,0 +1,87 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { useTranslations, languages, type Lang } from '../../../i18n/translations';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+
+const images = [
+  { id: 1, src: '/gallery/courtyard-morning.svg', category: 'daytime', alt: t('gallery.images.courtyardMorning.alt') },
+  { id: 2, src: '/gallery/coffee-pastries.svg', category: 'daytime', alt: t('gallery.images.coffeePastries.alt') },
+  { id: 3, src: '/gallery/fresh-brunch.svg', category: 'daytime', alt: t('gallery.images.freshBrunch.alt') },
+  { id: 4, src: '/gallery/garden-details.svg', category: 'details', alt: t('gallery.images.gardenDetails.alt') },
+  { id: 5, src: '/gallery/evening-cocktails.svg', category: 'evening', alt: t('gallery.images.eveningCocktails.alt') },
+  { id: 6, src: '/gallery/sunset-views.svg', category: 'evening', alt: t('gallery.images.sunsetViews.alt') },
+  { id: 7, src: '/gallery/night-ambiance.svg', category: 'evening', alt: t('gallery.images.nightAmbiance.alt') },
+  { id: 8, src: '/gallery/table-setting.svg', category: 'details', alt: t('gallery.images.tableSetting.alt') },
+];
+---
+
+<Layout title={t('gallery.meta.title')} description={t('gallery.meta.description')}>
+  <Header />
+
+  <section class="py-20 bg-gradient-to-br from-warm-sand/30 to-sea-teal/10">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif font-bold text-garden-green mb-6">{t('gallery.hero.title')}</h1>
+      <p class="text-lg max-w-3xl mx-auto text-charcoal/80">{t('gallery.hero.subtitle')}</p>
+    </div>
+  </section>
+
+  <section class="py-8 bg-white border-b border-warm-sand sticky top-[105px] z-40">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 sm:flex sm:justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
+        <button class="gallery-filter px-6 py-2 bg-garden-green text-cycladic-white rounded-full font-semibold" data-filter="all">{t('gallery.filters.all')}</button>
+        <button class="gallery-filter px-6 py-2 bg-warm-sand/30 text-charcoal rounded-full font-semibold" data-filter="daytime">{t('gallery.filters.daytime')}</button>
+        <button class="gallery-filter px-6 py-2 bg-warm-sand/30 text-charcoal rounded-full font-semibold" data-filter="evening">{t('gallery.filters.evening')}</button>
+        <button class="gallery-filter px-6 py-2 bg-warm-sand/30 text-charcoal rounded-full font-semibold" data-filter="details">{t('gallery.filters.details')}</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-cycladic-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto" id="gallery-grid">
+        {images.map((image) => (
+          <div class="gallery-item aspect-square rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-lg hover:shadow-xl" data-category={image.category}>
+            <img src={image.src} alt={image.alt} class="w-full h-full object-cover" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Follow Our Journey -->
+  <section class="py-20 bg-gradient-to-br from-prickly-pear/10 to-warm-sand/20">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-serif font-bold mb-4 text-garden-green">{t('gallery.followJourney.title')}</h2>
+      <p class="text-lg text-charcoal/70 mb-8 max-w-2xl mx-auto">{t('gallery.followJourney.subtitle')}</p>
+      <a href="https://instagram.com/fragkosiko" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full hover:from-purple-600 hover:to-pink-600 transition-all font-semibold text-lg shadow-lg">
+        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        {t('gallery.followJourney.instagram')}
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  const filterButtons = document.querySelectorAll('.gallery-filter');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      filterButtons.forEach(btn => { btn.classList.remove('bg-garden-green', 'text-cycladic-white'); btn.classList.add('bg-warm-sand/30', 'text-charcoal'); });
+      button.classList.remove('bg-warm-sand/30', 'text-charcoal');
+      button.classList.add('bg-garden-green', 'text-cycladic-white');
+      galleryItems.forEach(item => { (item as HTMLElement).style.display = (filter === 'all' || item.getAttribute('data-category') === filter) ? 'block' : 'none'; });
+    });
+  });
+</script>
+

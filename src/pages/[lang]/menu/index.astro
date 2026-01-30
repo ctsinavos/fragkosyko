@@ -1,0 +1,210 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { useTranslations, languages, type Lang } from '../../../i18n/translations';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+---
+
+<Layout title={t('menu.meta.title')} description={t('menu.meta.description')}>
+  <Header />
+
+  <section class="py-20 bg-gradient-to-br from-warm-sand/30 to-sea-teal/10">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif font-bold text-garden-green mb-6">{t('menu.hero.title')}</h1>
+      <p class="text-lg max-w-3xl mx-auto text-charcoal/80">{t('menu.hero.subtitle')}</p>
+    </div>
+  </section>
+
+  <div class="bg-white border-b border-warm-sand sticky top-[105px] z-40">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center space-x-8 py-4">
+        <button class="menu-tab px-4 py-2 font-semibold text-garden-green border-b-2 border-garden-green transition-colors" data-menu="brunch">{t('menu.tabs.brunch')}</button>
+        <button class="menu-tab px-4 py-2 font-semibold text-charcoal/60 border-b-2 border-transparent hover:text-garden-green transition-colors" data-menu="cocktails">{t('menu.tabs.cocktails')}</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brunch Menu -->
+  <section id="menu-brunch" class="menu-section py-20 bg-cycladic-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-garden-green/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">☕</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.coffee.title')}</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.coffee.greekCoffee.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.coffee.greekCoffee.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€3.50</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.coffee.espresso.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.coffee.espresso.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€3.50 - €4.50</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.coffee.coldBrew.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.coffee.coldBrew.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€5.00</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.coffee.juices.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.coffee.juices.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€5.50</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🥐</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.pastries.title')}</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.pastries.yogurt.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.pastries.yogurt.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€7.00</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.pastries.croissant.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.pastries.croissant.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€3.50</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.pastries.bougatsa.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.pastries.bougatsa.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€5.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-sea-teal/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍳</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.brunch.title')}</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.brunch.shakshuka.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.brunch.shakshuka.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€12.00</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.brunch.omelette.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.brunch.omelette.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€11.00</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.brunch.pancakes.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.brunch.pancakes.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€10.00</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.brunch.bowl.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.brunch.bowl.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€13.00</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.brunch.eggs.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.brunch.eggs.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€9.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cocktails Menu -->
+  <section id="menu-cocktails" class="menu-section hidden py-20 bg-cycladic-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-garden-green/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍸</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.cocktails.title')}</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.cocktails.aegeanSpritz.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.cocktails.aegeanSpritz.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€10.00</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.cocktails.naxosMule.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.cocktails.naxosMule.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€9.50</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.cocktails.gardenGin.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.cocktails.gardenGin.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€11.00</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.cocktails.sunsetNegroni.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.cocktails.sunsetNegroni.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€10.50</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍷</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.wines.title')}</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.wines.localWhite.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.wines.localWhite.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€6.50</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.wines.localRed.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.wines.localRed.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€6.50</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.wines.prosecco.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.wines.prosecco.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€7.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-sea-teal/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🥤</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.nonAlcoholic.title')}</h2>
+        </div>
+        <div class="grid gap-6">
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.nonAlcoholic.lemonade.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.nonAlcoholic.lemonade.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€5.00</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.nonAlcoholic.icedTea.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.nonAlcoholic.icedTea.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€4.50</span>
+          </div>
+          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div><h3 class="text-xl font-semibold mb-2">{t('menu.nonAlcoholic.smoothie.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.nonAlcoholic.smoothie.description')}</p></div>
+            <span class="text-lg font-semibold text-garden-green">€6.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Daily Specials Banner -->
+  <section class="py-12 bg-gradient-to-r from-garden-green to-sea-teal text-cycladic-white">
+    <div class="container mx-auto px-4 text-center">
+      <h3 class="text-2xl font-serif font-bold mb-2">{t('menu.dailySpecials.title')}</h3>
+      <p class="text-lg">{t('menu.dailySpecials.description')}</p>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  const tabs = document.querySelectorAll('.menu-tab');
+  const sections = document.querySelectorAll('.menu-section');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const menuType = tab.getAttribute('data-menu');
+      tabs.forEach(t => { t.classList.remove('text-garden-green', 'border-garden-green'); t.classList.add('text-charcoal/60', 'border-transparent'); });
+      tab.classList.remove('text-charcoal/60', 'border-transparent');
+      tab.classList.add('text-garden-green', 'border-garden-green');
+      sections.forEach(section => { section.classList.toggle('hidden', section.id !== `menu-${menuType}`); });
+    });
+  });
+</script>
+

@@ -1,16 +1,21 @@
 ---
 import '../styles/global.css';
+import { getLangFromUrl, useTranslations, type Lang } from '../i18n/translations';
 
 interface Props {
   title: string;
   description?: string;
+  lang?: Lang;
 }
 
-const { title, description = "From sunlit brunch to starlit cocktails in our hidden garden." } = Astro.props;
+const currentLang = Astro.props.lang || getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+
+const { title, description = t('footer.tagline') } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />

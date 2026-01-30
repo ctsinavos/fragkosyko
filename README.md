@@ -1,6 +1,6 @@
-# Fragkosyko - Garden Brunch & Cocktails in Naxos
+# Fragkosiko - Garden Brunch & Cocktails in Naxos
 
-A beautiful, fast, and modern website for Fragkosyko restaurant in Naxos, Greece. Built with Astro and Tailwind CSS.
+A beautiful, fast, and modern website for Fragkosiko restaurant in Naxos, Greece. Built with Astro and Tailwind CSS.
 
 ## 🚀 Getting Started
 
@@ -138,8 +138,8 @@ Update social media URLs in:
 
 ## 📄 License
 
-Copyright © 2025 Fragkosyko. All rights reserved.
+Copyright © 2025 Fragkosiko. All rights reserved.
 
 ## 💬 Support
 
-For questions or support, contact: info@fragkosyko.com
+For questions or support, contact: info@fragkosiko.com

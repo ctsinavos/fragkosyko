@@ -1,4 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/translations';
+
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 ---
 
 <footer class="bg-charcoal text-cycladic-white">
@@ -6,8 +10,8 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
       <!-- Logo & Tagline -->
       <div class="col-span-1 md:col-span-2">
-        <img src="/logo_without_text.png" alt="Fragkosyko" class="h-16 w-auto mb-3" style="mix-blend-mode: multiply;" />
-        <p class="text-sm text-warm-sand mb-4">From sunlit brunch to starlit cocktails in our hidden garden.</p>
+        <img src="/logo_without_text.png" alt="Fragkosiko" class="h-16 w-auto mb-3" style="mix-blend-mode: multiply;" />
+        <p class="text-sm text-warm-sand mb-4">{t('footer.tagline')}</p>
         <div class="flex space-x-4">
           <a href="#" class="text-cycladic-white hover:text-garden-green transition-colors" aria-label="Instagram">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -24,34 +28,34 @@
 
       <!-- Quick Links -->
       <div>
-        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Quick Links</h4>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">{t('footer.quickLinks')}</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="/" class="hover:text-garden-green transition-colors">Home</a></li>
-          <li><a href="/menu" class="hover:text-garden-green transition-colors">Menu</a></li>
-          <li><a href="/about" class="hover:text-garden-green transition-colors">About</a></li>
-          <li><a href="/gallery" class="hover:text-garden-green transition-colors">Gallery</a></li>
-          <li><a href="/reservations" class="hover:text-garden-green transition-colors">Reservations</a></li>
-          <li><a href="/contact" class="hover:text-garden-green transition-colors">Contact</a></li>
+          <li><a href={getLocalizedPath('/', currentLang)} class="hover:text-garden-green transition-colors">{t('nav.home')}</a></li>
+          <li><a href={getLocalizedPath('/menu', currentLang)} class="hover:text-garden-green transition-colors">{t('nav.menu')}</a></li>
+          <li><a href={getLocalizedPath('/about', currentLang)} class="hover:text-garden-green transition-colors">{t('nav.about')}</a></li>
+          <li><a href={getLocalizedPath('/gallery', currentLang)} class="hover:text-garden-green transition-colors">{t('nav.gallery')}</a></li>
+          <li><a href={getLocalizedPath('/reservations', currentLang)} class="hover:text-garden-green transition-colors">{t('nav.reservations')}</a></li>
+          <li><a href={getLocalizedPath('/contact', currentLang)} class="hover:text-garden-green transition-colors">{t('nav.contact')}</a></li>
         </ul>
       </div>
 
       <!-- Contact Info -->
       <div>
-        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Contact</h4>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">{t('footer.contact')}</h4>
         <ul class="space-y-2 text-sm">
-          <li>Naxos, Greece</li>
-          <li><a href="tel:+302285012345" class="hover:text-garden-green transition-colors">+30 228 501 2345</a></li>
-          <li><a href="mailto:info@fragkosyko.com" class="hover:text-garden-green transition-colors">info@fragkosyko.com</a></li>
+          <li>{t('footer.location')}</li>
+          <li><a href={`tel:${t('common.phone')}`} class="hover:text-garden-green transition-colors">{t('common.phone')}</a></li>
+          <li><a href={`mailto:${t('common.emailAddress')}`} class="hover:text-garden-green transition-colors">{t('common.emailAddress')}</a></li>
         </ul>
         <div class="mt-4">
-          <p class="text-xs font-semibold mb-1">Opening Hours</p>
-          <p class="text-xs">Daily: 8:00 AM - 12:00 AM</p>
+          <p class="text-xs font-semibold mb-1">{t('footer.openingHours')}</p>
+          <p class="text-xs">{t('footer.daily')}</p>
         </div>
       </div>
     </div>
 
     <div class="border-t border-warm-sand/20 pt-8 text-center text-sm text-warm-sand">
-      <p>&copy; {new Date().getFullYear()} Fragkosyko. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} {t('footer.copyright')}</p>
     </div>
   </div>
 </footer>

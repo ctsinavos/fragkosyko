@@ -1,0 +1,149 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { useTranslations, languages, type Lang } from '../../../i18n/translations';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+---
+
+<Layout title={t('reservations.meta.title')} description={t('reservations.meta.description')}>
+  <Header />
+
+  <section class="py-20 bg-gradient-to-br from-warm-sand/30 to-sea-teal/10">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif font-bold text-garden-green mb-6">{t('reservations.hero.title')}</h1>
+      <p class="text-lg max-w-3xl mx-auto text-charcoal/80">{t('reservations.hero.subtitle')}</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-cycladic-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="bg-garden-green/10 border border-garden-green/30 rounded-2xl p-6 mb-8">
+          <p class="text-center text-charcoal">
+            <strong>{t('reservations.form.groupInfo')}</strong> {t('reservations.form.callUs')}
+            <a href={`tel:${t('common.phone')}`} class="text-garden-green font-semibold hover:underline">{t('common.phone')}</a>
+          </p>
+        </div>
+
+        <form class="bg-white rounded-2xl shadow-xl p-8 md:p-12" name="reservations" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="reservations" />
+          <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="name" class="block text-sm font-semibold text-charcoal mb-2">{t('reservations.form.fullName')} *</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-warm-sand rounded-lg focus:ring-2 focus:ring-garden-green focus:border-transparent" placeholder={t('reservations.form.fullName')} />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-semibold text-charcoal mb-2">{t('reservations.form.email')} *</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-warm-sand rounded-lg focus:ring-2 focus:ring-garden-green focus:border-transparent" placeholder={t('common.emailAddress')} />
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label for="phone" class="block text-sm font-semibold text-charcoal mb-2">{t('reservations.form.phone')} *</label>
+            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-warm-sand rounded-lg focus:ring-2 focus:ring-garden-green focus:border-transparent" placeholder="+30 ..." />
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="date" class="block text-sm font-semibold text-charcoal mb-2">{t('reservations.form.date')} *</label>
+              <input type="date" id="date" name="date" required class="w-full px-4 py-3 border border-warm-sand rounded-lg focus:ring-2 focus:ring-garden-green focus:border-transparent" />
+            </div>
+            <div>
+              <label for="time" class="block text-sm font-semibold text-charcoal mb-2">{t('reservations.form.time')} *</label>
+              <select id="time" name="time" required class="w-full px-4 py-3 border border-warm-sand rounded-lg focus:ring-2 focus:ring-garden-green focus:border-transparent">
+                <option value="">{t('reservations.form.selectTime')}</option>
+                <optgroup label={t('reservations.form.brunch')}>
+                  <option value="08:00">08:00</option><option value="09:00">09:00</option><option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option><option value="12:00">12:00</option><option value="13:00">13:00</option>
+                </optgroup>
+                <optgroup label={t('reservations.form.evening')}>
+                  <option value="18:00">18:00</option><option value="19:00">19:00</option><option value="20:00">20:00</option>
+                  <option value="21:00">21:00</option><option value="22:00">22:00</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label for="guests" class="block text-sm font-semibold text-charcoal mb-2">{t('reservations.form.guests')} *</label>
+            <select id="guests" name="guests" required class="w-full px-4 py-3 border border-warm-sand rounded-lg focus:ring-2 focus:ring-garden-green focus:border-transparent">
+              <option value="">{t('reservations.form.selectGuests')}</option>
+              <option value="1">1 {t('reservations.form.guest')}</option>
+              <option value="2">2 {t('reservations.form.guests_plural')}</option>
+              <option value="3">3 {t('reservations.form.guests_plural')}</option>
+              <option value="4">4 {t('reservations.form.guests_plural')}</option>
+              <option value="5">5 {t('reservations.form.guests_plural')}</option>
+              <option value="6">6 {t('reservations.form.guests_plural')}</option>
+              <option value="7">7 {t('reservations.form.guests_plural')}</option>
+              <option value="8+">8+ {t('reservations.form.guests_plural')}</option>
+            </select>
+          </div>
+
+          <div class="mb-8">
+            <label for="message" class="block text-sm font-semibold text-charcoal mb-2">{t('reservations.form.specialRequests')}</label>
+            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-warm-sand rounded-lg focus:ring-2 focus:ring-garden-green focus:border-transparent" placeholder={t('reservations.form.specialRequestsPlaceholder')}></textarea>
+          </div>
+
+          <button type="submit" class="w-full px-8 py-4 bg-garden-green text-cycladic-white rounded-full hover:bg-garden-green-dark transition-all hover:shadow-lg text-lg font-semibold">{t('reservations.form.submit')}</button>
+          <p class="text-sm text-charcoal/60 text-center mt-4">{t('reservations.info.confirmation.description')}</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-br from-warm-sand/20 to-sea-teal/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-serif font-bold text-center mb-12 text-garden-green">{t('reservations.info.title')}</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
+            <div class="w-16 h-16 bg-garden-green/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-8 h-8 text-garden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-serif font-bold mb-2 text-garden-green">{t('reservations.info.confirmation.title')}</h3>
+            <p class="text-charcoal/70 text-sm">{t('reservations.info.confirmation.description')}</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
+            <div class="w-16 h-16 bg-sea-teal/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-8 h-8 text-sea-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </div>
+            <h3 class="text-xl font-serif font-bold mb-2 text-sea-teal">{t('reservations.info.walkIns.title')}</h3>
+            <p class="text-charcoal/70 text-sm">{t('reservations.info.walkIns.description')}</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
+            <div class="w-16 h-16 bg-prickly-pear/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-8 h-8 text-prickly-pear" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-serif font-bold mb-2 text-prickly-pear">{t('reservations.info.cancellation.title')}</h3>
+            <p class="text-charcoal/70 text-sm">{t('reservations.info.cancellation.description')}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-8 text-garden-green">{t('footer.openingHours')}</h2>
+      <div class="max-w-md mx-auto bg-gradient-to-br from-warm-sand/20 to-sea-teal/10 rounded-2xl p-8">
+        <p class="text-2xl font-serif text-garden-green mb-6">{t('footer.daily')}</p>
+        <div class="border-t border-charcoal/20 pt-6">
+          <p class="text-sm text-charcoal/70 mb-2">{t('contact.info.brunchHours')}</p>
+          <p class="text-sm text-charcoal/70">{t('contact.info.eveningHours')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+

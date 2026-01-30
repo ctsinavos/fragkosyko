@@ -1,14 +1,28 @@
 ---
+import { getLangFromUrl, useTranslations, getLocalizedPath, languages } from '../i18n/translations';
+
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+
+// Get the path without language prefix for switching
+const pathWithoutLang = Astro.url.pathname.replace(/^\/(en|el)/, '') || '/';
+
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/menu', label: 'Menu' },
-  { href: '/about', label: 'About' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/reservations', label: 'Reservations' },
-  { href: '/contact', label: 'Contact' },
+  { href: getLocalizedPath('/', currentLang), label: t('nav.home'), key: '/' },
+  { href: getLocalizedPath('/menu', currentLang), label: t('nav.menu'), key: '/menu' },
+  { href: getLocalizedPath('/about', currentLang), label: t('nav.about'), key: '/about' },
+  { href: getLocalizedPath('/gallery', currentLang), label: t('nav.gallery'), key: '/gallery' },
+  { href: getLocalizedPath('/reservations', currentLang), label: t('nav.reservations'), key: '/reservations' },
+  { href: getLocalizedPath('/contact', currentLang), label: t('nav.contact'), key: '/contact' },
 ];
+
+// Check if current path matches nav item (accounting for language prefix)
+function isActive(itemKey: string): boolean {
+  const normalizedPath = currentPath.replace(/^\/(en|el)/, '') || '/';
+  return normalizedPath === itemKey;
+}
 ---
 
 <header class="sticky top-0 z-50 bg-white/98 backdrop-blur-md shadow-sm">
@@ -18,10 +32,10 @@ const navItems = [
   <nav class="container mx-auto px-6 py-3">
     <div class="flex items-center justify-between">
       <!-- Logo -->
-      <a href="/" class="flex items-center group">
+      <a href={getLocalizedPath('/', currentLang)} class="flex items-center group">
         <img
           src="/logo.png"
-          alt="Fragkosyko"
+          alt="Fragkosiko"
           class="h-20 w-auto transition-transform duration-300 group-hover:scale-105"
           style="mix-blend-mode: multiply;"
         />
@@ -33,27 +47,43 @@ const navItems = [
           <a
             href={item.href}
             class={`relative px-4 py-2 text-sm font-semibold tracking-wide transition-all duration-300 rounded-lg ${
-              currentPath === item.href
+              isActive(item.key)
                 ? 'text-garden-green bg-garden-green/5'
                 : 'text-charcoal hover:text-garden-green hover:bg-warm-sand/20'
             }`}
           >
             {item.label}
-            {currentPath === item.href && (
+            {isActive(item.key) && (
               <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-garden-green rounded-full"></span>
             )}
           </a>
         ))}
       </div>
 
-      <!-- CTA Button + Mobile Menu -->
+      <!-- CTA Button + Language Switcher + Mobile Menu -->
       <div class="flex items-center space-x-4">
+        <!-- Language Switcher -->
+        <div class="hidden md:flex items-center space-x-1 border border-warm-sand/50 rounded-full px-1 py-1">
+          {Object.entries(languages).map(([lang, _label]) => (
+            <a
+              href={lang === 'en' ? pathWithoutLang : `/${lang}${pathWithoutLang}`}
+              class={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${
+                currentLang === lang
+                  ? 'bg-garden-green text-white'
+                  : 'text-charcoal hover:bg-warm-sand/30'
+              }`}
+            >
+              {lang.toUpperCase()}
+            </a>
+          ))}
+        </div>
+
         <!-- Desktop CTA -->
         <a
-          href="/reservations"
+          href={getLocalizedPath('/reservations', currentLang)}
           class="hidden lg:flex items-center space-x-2 px-6 py-2.5 bg-gradient-to-r from-garden-green to-garden-green-dark text-white rounded-full hover:shadow-lg hover:shadow-garden-green/30 transition-all duration-300 font-semibold text-sm group"
         >
-          <span>Book a Table</span>
+          <span>{t('nav.bookTable')}</span>
           <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
@@ -84,7 +114,7 @@ const navItems = [
           <a
             href={item.href}
             class={`px-4 py-3 text-base font-semibold rounded-lg transition-all ${
-              currentPath === item.href
+              isActive(item.key)
                 ? 'text-garden-green bg-garden-green/10'
                 : 'text-charcoal hover:text-garden-green hover:bg-warm-sand/20'
             }`}
@@ -94,13 +124,31 @@ const navItems = [
         ))}
       </div>
 
+      <!-- Mobile Language Switcher -->
+      <div class="mt-4 pt-4 border-t border-warm-sand/30">
+        <div class="flex items-center justify-center space-x-2">
+          {Object.entries(languages).map(([lang, label]) => (
+            <a
+              href={lang === 'en' ? pathWithoutLang : `/${lang}${pathWithoutLang}`}
+              class={`px-4 py-2 text-sm font-semibold rounded-full transition-all ${
+                currentLang === lang
+                  ? 'bg-garden-green text-white'
+                  : 'text-charcoal bg-warm-sand/20 hover:bg-warm-sand/40'
+              }`}
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+
       <!-- Mobile CTA -->
-      <div class="mt-6 pt-6 border-t border-warm-sand/30">
+      <div class="mt-4 pt-4 border-t border-warm-sand/30">
         <a
-          href="/reservations"
+          href={getLocalizedPath('/reservations', currentLang)}
           class="flex items-center justify-center space-x-2 w-full px-6 py-3 bg-gradient-to-r from-garden-green to-garden-green-dark text-white rounded-full hover:shadow-lg transition-all font-semibold"
         >
-          <span>Book a Table</span>
+          <span>{t('nav.bookTable')}</span>
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>

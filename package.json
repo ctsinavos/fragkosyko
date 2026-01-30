@@ -1,5 +1,5 @@
 {
-  "name": "fragkosyko",
+  "name": "fragkosiko",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
@@ -10,14 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.0.0",
+    "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
-    "postcss": "^8.4.32"
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "autoprefixer": "^10.4.16"
   }
 }
-
