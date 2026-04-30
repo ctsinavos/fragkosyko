@@ -1,14 +1,10 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Header from '../../../components/Header.astro';
-import Footer from '../../../components/Footer.astro';
-import { useTranslations, languages, type Lang } from '../../../i18n/translations';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations, type Lang } from '../../i18n/translations';
 
-export function getStaticPaths() {
-  return [{ params: { lang: 'en' } }];
-}
-
-const { lang } = Astro.params as { lang: Lang };
+const lang: Lang = 'el';
 const t = useTranslations(lang);
 ---
 

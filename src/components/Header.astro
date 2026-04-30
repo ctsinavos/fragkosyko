@@ -5,9 +5,17 @@ const currentLang = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
 
 // Get the path without language prefix for switching
-const pathWithoutLang = Astro.url.pathname.replace(/^\/(en|el)/, '') || '/';
+const pathWithoutLang = Astro.url.pathname.replace(/^\/en(\/|$)/, '/') || '/';
 
 const currentPath = Astro.url.pathname;
+
+// Helper to build language-switch hrefs
+function langSwitchHref(targetLang: string): string {
+  const cleanPath = pathWithoutLang === '/' ? '/' : pathWithoutLang;
+  if (targetLang === 'el') return cleanPath;
+  if (cleanPath === '/') return '/en/';
+  return `/en${cleanPath}`;
+}
 
 const navItems = [
   { href: getLocalizedPath('/', currentLang), label: t('nav.home'), key: '/' },
@@ -18,10 +26,13 @@ const navItems = [
   { href: getLocalizedPath('/contact', currentLang), label: t('nav.contact'), key: '/contact' },
 ];
 
-// Check if current path matches nav item (accounting for language prefix)
+// Check if current path matches nav item
 function isActive(itemKey: string): boolean {
-  const normalizedPath = currentPath.replace(/^\/(en|el)/, '') || '/';
-  return normalizedPath === itemKey;
+  const normalizedPath = currentPath.replace(/^\/en(\/|$)/, '/') || '/';
+  const cleaned = normalizedPath !== '/' && normalizedPath.endsWith('/')
+    ? normalizedPath.slice(0, -1)
+    : normalizedPath;
+  return cleaned === itemKey;
 }
 ---
 
@@ -66,7 +77,7 @@ function isActive(itemKey: string): boolean {
         <div class="hidden md:flex items-center space-x-1 border border-warm-sand/50 rounded-full px-1 py-1">
           {Object.entries(languages).map(([lang, _label]) => (
             <a
-              href={lang === 'en' ? pathWithoutLang : `/${lang}${pathWithoutLang}`}
+              href={langSwitchHref(lang)}
               class={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${
                 currentLang === lang
                   ? 'bg-garden-green text-white'
@@ -129,7 +140,7 @@ function isActive(itemKey: string): boolean {
         <div class="flex items-center justify-center space-x-2">
           {Object.entries(languages).map(([lang, label]) => (
             <a
-              href={lang === 'en' ? pathWithoutLang : `/${lang}${pathWithoutLang}`}
+              href={langSwitchHref(lang)}
               class={`px-4 py-2 text-sm font-semibold rounded-full transition-all ${
                 currentLang === lang
                   ? 'bg-garden-green text-white'

@@ -1,23 +1,23 @@
 // Translation utilities for Fragkosiko
-// Supports: English (en) and Greek (el)
+// Supports: English (en) and Greek (el) — Greek is the default locale (no URL prefix)
 
 import en from './en.json';
 import el from './el.json';
 
 export const languages = {
-  en: 'English',
   el: 'Ελληνικά',
+  en: 'English',
 };
 
-export const defaultLang = 'en';
+export const defaultLang = 'el' as const;
 
 export const translations = { en, el } as const;
 
 export type Lang = keyof typeof translations;
 
 export function getLangFromUrl(url: URL): Lang {
-  const [, lang] = url.pathname.split('/');
-  if (lang in translations) return lang as Lang;
+  const [, maybeLang] = url.pathname.split('/');
+  if (maybeLang === 'en') return 'en';
   return defaultLang;
 }
 
@@ -30,7 +30,7 @@ export function useTranslations(lang: Lang) {
       value = value?.[k];
     }
 
-    // Fallback to English if translation not found
+    // Fallback to default language if translation not found
     if (value === undefined) {
       value = translations[defaultLang];
       for (const k of keys) {
@@ -43,7 +43,8 @@ export function useTranslations(lang: Lang) {
 }
 
 export function getLocalizedPath(path: string, lang: Lang): string {
-  // Always prefix with language since prefixDefaultLocale is true
-  return `/${lang}${path === '/' ? '' : path}`;
+  // Default language (el) has no prefix; non-default languages get /<lang> prefix
+  if (lang === defaultLang) return path;
+  if (path === '/') return `/${lang}/`;
+  return `/${lang}${path}`;
 }
-

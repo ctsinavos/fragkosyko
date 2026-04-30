@@ -5,10 +5,10 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://fragkosiko.gr',
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'el'],
+    defaultLocale: 'el',
+    locales: ['el', 'en'],
     routing: {
-      prefixDefaultLocale: true, // /en/about for English, /el/about for Greek
+      prefixDefaultLocale: false, // Greek (default) has no prefix; English uses /en/
     },
   },
   integrations: [
@@ -17,4 +17,3 @@ export default defineConfig({
     }),
   ],
 });
-
