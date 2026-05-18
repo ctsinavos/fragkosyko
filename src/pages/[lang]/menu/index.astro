@@ -2,7 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
-import { useTranslations, languages, type Lang } from '../../../i18n/translations';
+import { useTranslations, type Lang } from '../../../i18n/translations';
 
 export function getStaticPaths() {
   return [{ params: { lang: 'en' } }];
@@ -10,6 +10,12 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params as { lang: Lang };
 const t = useTranslations(lang);
+
+const pdfFiles = {
+  brunch: `/menus/brunch-${lang}.pdf`,
+  food: `/menus/food-${lang}.pdf`,
+  cocktails: `/menus/cocktails.pdf`,
+};
 ---
 
 <Layout title={t('menu.meta.title')} description={t('menu.meta.description')}>
@@ -22,166 +28,359 @@ const t = useTranslations(lang);
     </div>
   </section>
 
+  <!-- Tab Navigation -->
   <div class="bg-white border-b border-warm-sand sticky top-[105px] z-40">
     <div class="container mx-auto px-4">
-      <div class="flex justify-center space-x-8 py-4">
-        <button class="menu-tab px-4 py-2 font-semibold text-garden-green border-b-2 border-garden-green transition-colors" data-menu="brunch">{t('menu.tabs.brunch')}</button>
-        <button class="menu-tab px-4 py-2 font-semibold text-charcoal/60 border-b-2 border-transparent hover:text-garden-green transition-colors" data-menu="cocktails">{t('menu.tabs.cocktails')}</button>
+      <div class="flex justify-center space-x-4 md:space-x-8 py-4">
+        <button class="menu-tab px-4 py-2 font-semibold border-b-2 transition-colors text-garden-green border-garden-green" data-menu="brunch">🥐 {t('menu.tabs.brunch')}</button>
+        <button class="menu-tab px-4 py-2 font-semibold border-b-2 transition-colors text-charcoal/60 border-transparent hover:text-garden-green" data-menu="food">🍽️ {t('menu.tabs.food')}</button>
+        <button class="menu-tab px-4 py-2 font-semibold border-b-2 transition-colors text-charcoal/60 border-transparent hover:text-garden-green" data-menu="cocktails">🍸 {t('menu.tabs.cocktails')}</button>
       </div>
     </div>
   </div>
 
-  <!-- Brunch Menu -->
+  <!-- Brunch Tab -->
   <section id="menu-brunch" class="menu-section py-20 bg-cycladic-white">
     <div class="container mx-auto px-4 max-w-5xl">
+      <!-- Brunch Dishes -->
       <div class="mb-16">
-        <div class="flex items-center mb-8">
-          <div class="w-12 h-12 bg-garden-green/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">☕</span></div>
-          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.coffee.title')}</h2>
+        <div class="flex items-center mb-2">
+          <div class="w-12 h-12 bg-garden-green/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍳</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.brunchSection.title')}</h2>
         </div>
-        <div class="grid gap-6">
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.coffee.greekCoffee.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.coffee.greekCoffee.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€3.50</span>
+        <p class="text-sm text-charcoal/50 ml-16 mb-8">{t('menu.brunchSection.hours')}</p>
+        <div class="grid gap-4">
+          {['kayanas', 'poachedEggs', 'shakshuka', 'rizogalo', 'frenchToast'].map(item => (
+            <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-1 mr-4"><h3 class="text-xl font-semibold mb-1">{t(`menu.brunchSection.${item}.name`)}</h3><p class="text-sm text-charcoal/70">{t(`menu.brunchSection.${item}.description`)}</p></div>
+              <span class="text-lg font-semibold text-garden-green whitespace-nowrap">€{t(`menu.brunchSection.${item}.price`)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Coffee & Tea side by side -->
+      <div class="mb-16 grid md:grid-cols-2 gap-8">
+        <div>
+          <div class="flex items-center mb-6">
+            <div class="w-10 h-10 bg-garden-green/10 rounded-full flex items-center justify-center mr-3"><span class="text-xl">☕</span></div>
+            <h2 class="text-2xl font-serif font-bold text-garden-green">{t('menu.coffee.title')}</h2>
           </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.coffee.espresso.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.coffee.espresso.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€3.50 - €4.50</span>
+          <div class="grid gap-3">
+            {['espresso', 'freddo', 'greek', 'furtado', 'mokka'].map(item => (
+              <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm">
+                <span class="font-medium">{t(`menu.coffee.${item}.name`)}</span>
+                <span class="text-garden-green font-semibold">€{t(`menu.coffee.${item}.price`)}</span>
+              </div>
+            ))}
           </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.coffee.coldBrew.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.coffee.coldBrew.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€5.00</span>
+        </div>
+        <div>
+          <div class="flex items-center mb-6">
+            <div class="w-10 h-10 bg-sea-teal/10 rounded-full flex items-center justify-center mr-3"><span class="text-xl">🍵</span></div>
+            <h2 class="text-2xl font-serif font-bold text-garden-green">{t('menu.tea.title')}</h2>
           </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.coffee.juices.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.coffee.juices.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€5.50</span>
+          <div class="grid gap-3">
+            {['english', 'matcha', 'seasonal', 'chamomile', 'mountain'].map(item => (
+              <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm">
+                <span class="font-medium">{t(`menu.tea.${item}.name`)}</span>
+                <span class="text-garden-green font-semibold">€{t(`menu.tea.${item}.price`)}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
+      <!-- Bites -->
       <div class="mb-16">
-        <div class="flex items-center mb-8">
-          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🥐</span></div>
-          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.pastries.title')}</h2>
+        <div class="flex items-center mb-2">
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🥪</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.bites.title')}</h2>
         </div>
-        <div class="grid gap-6">
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.pastries.yogurt.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.pastries.yogurt.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€7.00</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.pastries.croissant.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.pastries.croissant.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€3.50</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.pastries.bougatsa.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.pastries.bougatsa.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€5.00</span>
-          </div>
+        <p class="text-sm text-charcoal/50 ml-16 mb-8">{t('menu.bites.hours')}</p>
+        <div class="grid gap-4">
+          {['carre', 'panini', 'burrito'].map(item => (
+            <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-1 mr-4"><h3 class="text-xl font-semibold mb-1">{t(`menu.bites.${item}.name`)}</h3><p class="text-sm text-charcoal/70">{t(`menu.bites.${item}.description`)}</p></div>
+              <span class="text-lg font-semibold text-garden-green whitespace-nowrap">€{t(`menu.bites.${item}.price`)}</span>
+            </div>
+          ))}
         </div>
       </div>
 
+      <!-- Sweets -->
       <div class="mb-16">
         <div class="flex items-center mb-8">
-          <div class="w-12 h-12 bg-sea-teal/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍳</span></div>
-          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.brunch.title')}</h2>
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍰</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.sweets.title')}</h2>
         </div>
-        <div class="grid gap-6">
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.brunch.shakshuka.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.brunch.shakshuka.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€12.00</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.brunch.omelette.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.brunch.omelette.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€11.00</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.brunch.pancakes.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.brunch.pancakes.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€10.00</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.brunch.bowl.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.brunch.bowl.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€13.00</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.brunch.eggs.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.brunch.eggs.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€9.00</span>
-          </div>
+        <div class="grid gap-4">
+          {['churros', 'iceCream', 'kormos', 'fruitSalad'].map(item => (
+            <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-1 mr-4"><h3 class="text-xl font-semibold mb-1">{t(`menu.sweets.${item}.name`)}</h3>{t(`menu.sweets.${item}.description`) !== `menu.sweets.${item}.description` && <p class="text-sm text-charcoal/70">{t(`menu.sweets.${item}.description`)}</p>}</div>
+              <span class="text-lg font-semibold text-garden-green whitespace-nowrap">€{t(`menu.sweets.${item}.price`)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Sips -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-sea-teal/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🥤</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.sips.title')}</h2>
+        </div>
+        <div class="grid gap-3">
+          {['softDrinks', 'lemonade', 'redBerry', 'detox'].map(item => (
+            <div class="flex justify-between items-start bg-white p-4 rounded-lg shadow-sm">
+              <div class="flex-1 mr-4"><span class="font-medium">{t(`menu.sips.${item}.name`)}</span>{t(`menu.sips.${item}.description`) !== `menu.sips.${item}.description` && <p class="text-xs text-charcoal/60 mt-1">{t(`menu.sips.${item}.description`)}</p>}</div>
+              <span class="text-garden-green font-semibold">€{t(`menu.sips.${item}.price`)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-garden-green/5 to-sea-teal/5 rounded-2xl p-8 text-center border border-garden-green/20">
+        <h3 class="text-xl font-serif font-bold text-garden-green mb-4">{t('menu.pdf.sectionTitle')}</h3>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="view-pdf-btn inline-flex items-center justify-center px-6 py-3 bg-garden-green text-cycladic-white font-semibold rounded-lg hover:bg-garden-green/90 transition-colors" data-pdf={pdfFiles.brunch}>
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            {t('menu.pdf.viewPdf')}
+          </button>
+          <a href={pdfFiles.brunch} download class="inline-flex items-center justify-center px-6 py-3 border-2 border-garden-green text-garden-green font-semibold rounded-lg hover:bg-garden-green/5 transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            {t('menu.pdf.download')}
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Cocktails Menu -->
+  <!-- Food Tab -->
+  <section id="menu-food" class="menu-section hidden py-20 bg-cycladic-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <!-- Starters -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-garden-green/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍽️</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.food.starters.title')}</h2>
+        </div>
+        <div class="grid gap-4">
+          {['eggplant', 'octopus', 'potato', 'croquettes', 'shrimp'].map(item => (
+            <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-1 mr-4"><h3 class="text-xl font-semibold mb-1">{t(`menu.food.starters.${item}.name`)}</h3><p class="text-sm text-charcoal/70">{t(`menu.food.starters.${item}.description`)}</p></div>
+              <span class="text-lg font-semibold text-garden-green whitespace-nowrap">€{t(`menu.food.starters.${item}.price`)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Salads -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-sea-teal/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🥗</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.food.salads.title')}</h2>
+        </div>
+        <div class="grid gap-4">
+          {['spanakopita', 'quinoa', 'axotiki', 'fragkosyko'].map(item => (
+            <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-1 mr-4"><h3 class="text-xl font-semibold mb-1">{t(`menu.food.salads.${item}.name`)}</h3><p class="text-sm text-charcoal/70">{t(`menu.food.salads.${item}.description`)}</p></div>
+              <span class="text-lg font-semibold text-garden-green whitespace-nowrap">€{t(`menu.food.salads.${item}.price`)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Mains -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🥩</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.food.mains.title')}</h2>
+        </div>
+        <div class="grid gap-4">
+          {['kalogeros', 'ballotine', 'burger', 'orzo', 'picanha', 'seaBass', 'linguine'].map(item => (
+            <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-1 mr-4"><h3 class="text-xl font-semibold mb-1">{t(`menu.food.mains.${item}.name`)}</h3><p class="text-sm text-charcoal/70">{t(`menu.food.mains.${item}.description`)}</p></div>
+              <span class="text-lg font-semibold text-garden-green whitespace-nowrap">€{t(`menu.food.mains.${item}.price`)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Wine -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍷</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.food.wine.title')}</h2>
+        </div>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-charcoal mb-3">{t('menu.food.wine.white.title')}</h3>
+            <div class="grid gap-3">
+              {['palaiaKtimata', 'lagopati', 'senarioWhite', 'metheaWhite'].map(item => (
+                <div class="flex justify-between items-start bg-white p-4 rounded-lg shadow-sm">
+                  <div class="flex-1 mr-4"><span class="font-medium">{t(`menu.food.wine.white.${item}.name`)}</span><p class="text-xs text-charcoal/60 mt-1">{t(`menu.food.wine.white.${item}.description`)}</p></div>
+                  <span class="text-garden-green font-semibold">€{t(`menu.food.wine.white.${item}.price`)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-charcoal mb-3">{t('menu.food.wine.rose.title')}</h3>
+            <div class="grid gap-3">
+              {['granatus', 'metheaRose'].map(item => (
+                <div class="flex justify-between items-start bg-white p-4 rounded-lg shadow-sm">
+                  <div class="flex-1 mr-4"><span class="font-medium">{t(`menu.food.wine.rose.${item}.name`)}</span><p class="text-xs text-charcoal/60 mt-1">{t(`menu.food.wine.rose.${item}.description`)}</p></div>
+                  <span class="text-garden-green font-semibold">€{t(`menu.food.wine.rose.${item}.price`)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-charcoal mb-3">{t('menu.food.wine.red.title')}</h3>
+            <div class="grid gap-3">
+              {['senarioRed', 'metheaRed'].map(item => (
+                <div class="flex justify-between items-start bg-white p-4 rounded-lg shadow-sm">
+                  <div class="flex-1 mr-4"><span class="font-medium">{t(`menu.food.wine.red.${item}.name`)}</span><p class="text-xs text-charcoal/60 mt-1">{t(`menu.food.wine.red.${item}.description`)}</p></div>
+                  <span class="text-garden-green font-semibold">€{t(`menu.food.wine.red.${item}.price`)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beer -->
+      <div class="mb-16">
+        <div class="flex items-center mb-2">
+          <div class="w-12 h-12 bg-garden-green/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍺</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.food.beer.title')}</h2>
+        </div>
+        <p class="text-sm text-charcoal/50 ml-16 mb-6">{t('menu.food.beer.subtitle')}</p>
+        <div class="grid grid-cols-3 gap-3">
+          {['fragosyko', 'light', 'pale'].map(item => (
+            <div class="flex flex-col items-center bg-white p-4 rounded-lg shadow-sm text-center">
+              <span class="font-medium">{t(`menu.food.beer.${item}.name`)}</span>
+              <span class="text-garden-green font-semibold mt-1">€{t(`menu.food.beer.${item}.price`)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍰</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.food.desserts.title')}</h2>
+        </div>
+        <div class="grid gap-4">
+          {['churros', 'kormos', 'iceCream', 'fruitSalad'].map(item => (
+            <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-1 mr-4"><h3 class="text-xl font-semibold mb-1">{t(`menu.food.desserts.${item}.name`)}</h3>{t(`menu.food.desserts.${item}.description`) !== `menu.food.desserts.${item}.description` && <p class="text-sm text-charcoal/70">{t(`menu.food.desserts.${item}.description`)}</p>}</div>
+              <span class="text-lg font-semibold text-garden-green whitespace-nowrap">€{t(`menu.food.desserts.${item}.price`)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Digestives -->
+      <div class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="w-12 h-12 bg-sea-teal/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🥃</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.food.digestives.title')}</h2>
+        </div>
+        <div class="grid gap-3">
+          {['axia', 'tsipouro', 'kitron', 'vermouth'].map(item => (
+            <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm">
+              <span class="font-medium">{t(`menu.food.digestives.${item}.name`)}</span>
+              <span class="text-garden-green font-semibold">€{t(`menu.food.digestives.${item}.price`)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- PDF Section -->
+      <div class="bg-gradient-to-br from-garden-green/5 to-sea-teal/5 rounded-2xl p-8 text-center border border-garden-green/20">
+        <h3 class="text-xl font-serif font-bold text-garden-green mb-4">{t('menu.pdf.sectionTitle')}</h3>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="view-pdf-btn inline-flex items-center justify-center px-6 py-3 bg-garden-green text-cycladic-white font-semibold rounded-lg hover:bg-garden-green/90 transition-colors" data-pdf={pdfFiles.food}>
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            {t('menu.pdf.viewPdf')}
+          </button>
+          <a href={pdfFiles.food} download class="inline-flex items-center justify-center px-6 py-3 border-2 border-garden-green text-garden-green font-semibold rounded-lg hover:bg-garden-green/5 transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            {t('menu.pdf.download')}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cocktails Tab -->
   <section id="menu-cocktails" class="menu-section hidden py-20 bg-cycladic-white">
     <div class="container mx-auto px-4 max-w-5xl">
+      <!-- Masterpieces -->
       <div class="mb-16">
         <div class="flex items-center mb-8">
           <div class="w-12 h-12 bg-garden-green/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍸</span></div>
           <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.cocktails.title')}</h2>
         </div>
-        <div class="grid gap-6">
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.cocktails.aegeanSpritz.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.cocktails.aegeanSpritz.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€10.00</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.cocktails.naxosMule.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.cocktails.naxosMule.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€9.50</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.cocktails.gardenGin.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.cocktails.gardenGin.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€11.00</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.cocktails.sunsetNegroni.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.cocktails.sunsetNegroni.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€10.50</span>
-          </div>
+        <div class="grid gap-4">
+          {['myTie', 'fragkosiko', 'popCornNegroni', 'morenaSour', 'laDama', 'hakunaMatata', 'melonPaloma'].map(item => (
+            <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-1 mr-4"><h3 class="text-xl font-semibold mb-1">{t(`menu.cocktails.${item}.name`)}</h3><p class="text-sm text-charcoal/70">{t(`menu.cocktails.${item}.description`)}</p></div>
+              <span class="text-lg font-semibold text-garden-green whitespace-nowrap">€{t(`menu.cocktails.${item}.price`)}</span>
+            </div>
+          ))}
         </div>
       </div>
 
+      <!-- Spritzeria -->
       <div class="mb-16">
         <div class="flex items-center mb-8">
-          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🍷</span></div>
-          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.wines.title')}</h2>
+          <div class="w-12 h-12 bg-prickly-pear/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🥂</span></div>
+          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.spritzeria.title')}</h2>
         </div>
-        <div class="grid gap-6">
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.wines.localWhite.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.wines.localWhite.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€6.50</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.wines.localRed.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.wines.localRed.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€6.50</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.wines.prosecco.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.wines.prosecco.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€7.00</span>
-          </div>
+        <div class="grid gap-4">
+          {['kitroBellini', 'axia', 'bitterTruth', 'rocksAndGrapes'].map(item => (
+            <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-1 mr-4"><h3 class="text-xl font-semibold mb-1">{t(`menu.spritzeria.${item}.name`)}</h3><p class="text-sm text-charcoal/70">{t(`menu.spritzeria.${item}.description`)}</p></div>
+              <span class="text-lg font-semibold text-garden-green whitespace-nowrap">€{t(`menu.spritzeria.${item}.price`)}</span>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div class="mb-16">
-        <div class="flex items-center mb-8">
-          <div class="w-12 h-12 bg-sea-teal/10 rounded-full flex items-center justify-center mr-4"><span class="text-2xl">🥤</span></div>
-          <h2 class="text-3xl font-serif font-bold text-garden-green">{t('menu.nonAlcoholic.title')}</h2>
-        </div>
-        <div class="grid gap-6">
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.nonAlcoholic.lemonade.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.nonAlcoholic.lemonade.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€5.00</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.nonAlcoholic.icedTea.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.nonAlcoholic.icedTea.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€4.50</span>
-          </div>
-          <div class="flex justify-between items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div><h3 class="text-xl font-semibold mb-2">{t('menu.nonAlcoholic.smoothie.name')}</h3><p class="text-sm text-charcoal/70">{t('menu.nonAlcoholic.smoothie.description')}</p></div>
-            <span class="text-lg font-semibold text-garden-green">€6.00</span>
-          </div>
+      <div class="bg-gradient-to-br from-garden-green/5 to-sea-teal/5 rounded-2xl p-8 text-center border border-garden-green/20">
+        <h3 class="text-xl font-serif font-bold text-garden-green mb-2">{t('menu.pdf.sectionTitle')}</h3>
+        <p class="text-sm text-charcoal/50 italic mb-4">{t('menu.pdf.cocktailsNote')}</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="view-pdf-btn inline-flex items-center justify-center px-6 py-3 bg-garden-green text-cycladic-white font-semibold rounded-lg hover:bg-garden-green/90 transition-colors" data-pdf={pdfFiles.cocktails}>
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            {t('menu.pdf.viewPdf')}
+          </button>
+          <a href={pdfFiles.cocktails} download class="inline-flex items-center justify-center px-6 py-3 border-2 border-garden-green text-garden-green font-semibold rounded-lg hover:bg-garden-green/5 transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            {t('menu.pdf.download')}
+          </a>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- PDF Viewer Modal -->
+  <div id="pdf-modal" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-charcoal/80 backdrop-blur-sm" id="pdf-modal-backdrop"></div>
+    <div class="relative w-full h-full flex flex-col p-4 md:p-8">
+      <div class="flex justify-end mb-2">
+        <button id="pdf-modal-close" class="text-cycladic-white hover:text-warm-sand transition-colors flex items-center gap-2 font-semibold">
+          <span>{t('menu.pdf.close')}</span>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <iframe id="pdf-iframe" class="flex-1 w-full rounded-lg bg-white" src="" title="Menu PDF"></iframe>
+    </div>
+  </div>
 
   <!-- Daily Specials Banner -->
   <section class="py-12 bg-gradient-to-r from-garden-green to-sea-teal text-cycladic-white">
@@ -206,5 +405,37 @@ const t = useTranslations(lang);
       sections.forEach(section => { section.classList.toggle('hidden', section.id !== `menu-${menuType}`); });
     });
   });
+
+  const modal = document.getElementById('pdf-modal')!;
+  const iframe = document.getElementById('pdf-iframe') as HTMLIFrameElement;
+  const closeBtn = document.getElementById('pdf-modal-close')!;
+  const backdrop = document.getElementById('pdf-modal-backdrop')!;
+
+  function openModal(pdfUrl: string) {
+    iframe.src = pdfUrl;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.view-pdf-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pdfUrl = btn.getAttribute('data-pdf')!;
+      if (window.innerWidth >= 768) {
+        openModal(pdfUrl);
+      } else {
+        window.open(pdfUrl, '_blank');
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 </script>
 

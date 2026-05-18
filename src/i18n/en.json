@@ -186,134 +186,147 @@
       "subtitle": "Our menus change with the seasons, celebrating local producers and Naxos flavors. Every dish and drink is crafted with care, from sunrise brunch to starlit cocktails."
     },
     "tabs": {
-      "brunch": "Brunch & Daytime",
-      "cocktails": "Cocktails & Drinks"
+      "brunch": "Brunch",
+      "food": "Food",
+      "cocktails": "Cocktails"
+    },
+    "pdf": {
+      "viewPdf": "View Full Menu",
+      "download": "Download PDF",
+      "close": "Close",
+      "sectionTitle": "View the full menu as PDF",
+      "cocktailsNote": "Available in English only"
+    },
+    "brunchSection": {
+      "title": "Brunch",
+      "hours": "08:00-13:00",
+      "kayanas": { "name": "Kayanás", "description": "Scrambled eggs with fresh tomato, fresh oregano, crumbled feta cheese and Naxian Zamboni (traditional cured ham) served on rustic sourdough bread", "price": "9" },
+      "poachedEggs": { "name": "Poached Eggs", "description": "Rustic bread with guacamole, pickled cucumber and onion chips", "price": "8.5" },
+      "shakshuka": { "name": "Naxian Shakshuka", "description": "Double-fermented bread with spicy tomato sauce, eggplant tartare and grated xinotyro cheese (local sour cheese)", "price": "9.5" },
+      "rizogalo": { "name": "Rice Pudding (Rizogalo)", "description": "Infused with prickly pear, ginger and cinnamon", "price": "6.5" },
+      "frenchToast": { "name": "French Toast", "description": "\"Bougatsa\" cream, caramelized fig with fresh thyme", "price": "8" }
     },
     "coffee": {
-      "title": "Coffee & Beverages",
-      "greekCoffee": {
-        "name": "Greek Coffee",
-        "description": "Traditional, rich, and aromatic"
-      },
-      "espresso": {
-        "name": "Espresso / Cappuccino / Latte",
-        "description": "Locally roasted beans, expertly crafted"
-      },
-      "coldBrew": {
-        "name": "Island Cold Brew",
-        "description": "Smooth, refreshing, served over ice"
-      },
-      "juices": {
-        "name": "Fresh Juices",
-        "description": "Orange, grapefruit, seasonal fruits"
-      },
-      "teas": {
-        "name": "Herbal Teas",
-        "description": "Greek mountain tea, chamomile, mint from our garden"
-      }
+      "title": "Coffee",
+      "espresso": { "name": "Espresso/double", "price": "3/4" },
+      "freddo": { "name": "Freddo Espreso", "price": "4.5" },
+      "greek": { "name": "Greek Coffee/Double", "price": "3/4" },
+      "furtado": { "name": "Furtado", "price": "4" },
+      "mokka": { "name": "Mokka", "price": "5" }
     },
-    "pastries": {
-      "title": "Bites & Pastries",
-      "yogurt": {
-        "name": "Greek Yogurt Bowl",
-        "description": "With local honey, walnuts, and seasonal fruit"
-      },
-      "croissant": {
-        "name": "Butter Croissant",
-        "description": "Freshly baked, flaky perfection"
-      },
-      "bougatsa": {
-        "name": "Bougatsa",
-        "description": "Traditional custard pastry with cinnamon"
-      },
-      "toast": {
-        "name": "Avocado Toast",
-        "description": "Sourdough, cherry tomatoes, feta crumble, olive oil"
-      }
+    "tea": {
+      "title": "Tea",
+      "english": { "name": "English breakfast", "price": "4.5" },
+      "matcha": { "name": "Matcha Tea", "price": "5.5" },
+      "seasonal": { "name": "Seasonal Iced Tea", "price": "5" },
+      "chamomile": { "name": "Chamomile", "price": "4" },
+      "mountain": { "name": "Mountain Iced Tea", "price": "5.5" }
     },
-    "brunch": {
-      "title": "Brunch Plates",
-      "shakshuka": {
-        "name": "Naxos Shakshuka",
-        "description": "Farm eggs in spiced tomato sauce, local feta, crusty bread"
+    "bites": {
+      "title": "Bites",
+      "hours": "08:00-19:00",
+      "carre": { "name": "Carre sandwich", "description": "Gouda, Naxian Zamboni, tomato, lettuce, and bacon mayo. Served with a fresh green salad", "price": "8" },
+      "panini": { "name": "Rustic Panini", "description": "Caramelized olive pâté, crispy onion, pickled cucumber, colorful peppers, crumbled feta and early-harvest olive oil (agourelaio)", "price": "8.5" },
+      "burrito": { "name": "Fried Burrito", "description": "Chili con carne, pickled jalapeños, Naxian cheeses, and baby corn", "price": "10" }
+    },
+    "sweets": {
+      "title": "Sweets",
+      "churros": { "name": "Churros", "description": "Cinnamon and sugar, salted caramel syrup, and chocolate brownie ice cream", "price": "8" },
+      "iceCream": { "name": "PROVIO ice cream", "description": "Salted caramel / chocolate brownie / sheep's milk yogurt with honey and walnuts", "price": "4" },
+      "kormos": { "name": "Κορμός σοκολάτας", "description": "Salted caramel ice cream and slow-cooked falernum syrup", "price": "8.5" },
+      "fruitSalad": { "name": "Seasonal Fruit Salad", "price": "7.5" }
+    },
+    "sips": {
+      "title": "Sips",
+      "softDrinks": { "name": "Coca Cola/zero - Sprite - Fanta Lemon/Orange", "price": "4" },
+      "lemonade": { "name": "Handcrafted Lemonade", "price": "7" },
+      "redBerry": { "name": "Red berry blossom soda", "price": "7" },
+      "detox": { "name": "Superboost Detox Shot", "description": "Ginger, pomegranate, honey", "price": "8" }
+    },
+    "food": {
+      "starters": {
+        "title": "Starters",
+        "eggplant": { "name": "Smoked eggplant tartare", "description": "On bruschetta with burnt tomato sauce, walnuts, and roasted cherry tomatoes", "price": "9" },
+        "octopus": { "name": "Caramelized octopus", "description": "With black & yellow fava bean purée, fried capers, and prickly pear gel", "price": "18" },
+        "potato": { "name": "Naxian Potato \"rocks\"", "description": "With graviera cheese cream infused with white truffle and chives", "price": "8.5" },
+        "croquettes": { "name": "Moussaka Croquettes", "description": "With spicy tomato sauce", "price": "9.5" },
+        "shrimp": { "name": "Shrimp Popcorn", "description": "With guacamole and smoked tortilla chips", "price": "11" }
       },
-      "omelette": {
-        "name": "Garden Omelette",
-        "description": "Free-range eggs, seasonal vegetables, herbs, graviera cheese"
+      "salads": {
+        "title": "Salads",
+        "spanakopita": { "name": "Spinach Pie (Spanakopita) Salad", "description": "Baby spinach, baby arugula, lettuce, crumbled puff pastry, grated xinotyro cheese, and lemon-olive oil dressing", "price": "8" },
+        "quinoa": { "name": "Umami Quinoa", "description": "Quinoa, pickled beetroot, salt-cured egg yolk, crushed walnuts, baby arugula, and steamed vegetables", "price": "11" },
+        "axotiki": { "name": "Axotiki (Naxian Garden)", "description": "Colorful cherry tomatoes, cucumber, peppers, pickled onion, pickled rock samphire (kritamo), olive rings, and carob rusk", "price": "9" },
+        "fragkosyko": { "name": "Fragkosyko Salad", "description": "Bulgur, feta cheese, grilled peach, prickly pear & ginger vinaigrette, fresh mint, and black sesame seeds", "price": "10" }
       },
-      "pancakes": {
-        "name": "Fluffy Pancakes",
-        "description": "With honey, fresh berries, and Greek yogurt"
+      "mains": {
+        "title": "Mains",
+        "kalogeros": { "name": "Traditional \"Kalogeros\"", "description": "Slow-cooked beef in tomato sauce, eggplant and potato purée, grated xinotyro cheese, and a puff pastry crust", "price": "15" },
+        "ballotine": { "name": "Chicken Ballotine", "description": "Naxian Arseniko cheese cream, sautéed wild greens, burnt broccoli, and lemon cream", "price": "13" },
+        "burger": { "name": "Sheep Burger", "description": "Handmade ketchup, baby arugula, pickled onion, and graviera cheese cream infused with white truffle", "price": "16" },
+        "orzo": { "name": "Beetroot Orzo", "description": "Sautéed vegetables, roasted oyster mushrooms, and sour cream", "price": "10" },
+        "picanha": { "name": "Naxian Picanha", "description": "Roasted sweet potato and glazed baby corn", "price": "26" },
+        "seaBass": { "name": "Sea Bass Fricassee", "description": "Wild greens and buttery citrus sauce", "price": "17" },
+        "linguine": { "name": "Shrimp Linguine", "description": "Chared pepper, bisque, garlic sprouts, and thyme-infused Vermouth", "price": "14" }
       },
-      "bowl": {
-        "name": "Mediterranean Bowl",
-        "description": "Quinoa, hummus, roasted vegetables, tahini dressing"
+      "wine": {
+        "title": "Wine",
+        "white": {
+          "title": "White",
+          "palaiaKtimata": { "name": "Palaia Ktimata", "description": "Savatiano, Papagiannakos Winery", "price": "27" },
+          "lagopati": { "name": "Lagopati", "description": "Muscat of Alexandria, Hatziyeorgiou Estate", "price": "35" },
+          "senarioWhite": { "name": "Senario", "description": "Roditis, Muscat of Hamburg, Apostolaki Estate", "price": "21" },
+          "metheaWhite": { "name": "Methea", "description": "Assyrtiko, Vrinioti Winery", "price": "24" }
+        },
+        "rose": {
+          "title": "Rosé",
+          "granatus": { "name": "Granatus", "description": "Cabernet Sauvignon, Agiorgitiko, Papagiannakos Winery", "price": "29" },
+          "metheaRose": { "name": "Methea", "description": "Mavrokountoura, Monemvasia, Vrinioti Winery", "price": "25" }
+        },
+        "red": {
+          "title": "Red",
+          "senarioRed": { "name": "Senario", "description": "Merlot, Muscat of Hamburg, Limnioma, Apostolaki Estate", "price": "23" },
+          "metheaRed": { "name": "Methea", "description": "Mavrokountoura, Vrinioti Winery", "price": "26" }
+        }
       },
-      "eggs": {
-        "name": "Eggs Your Way",
-        "description": "Poached, scrambled, or fried with toast and greens"
+      "beer": {
+        "title": "Beer",
+        "subtitle": "Enjoy our signature Fragkosyko beers",
+        "fragosyko": { "name": "Fragosyko Lager", "price": "5.5" },
+        "light": { "name": "Light Lager", "price": "6" },
+        "pale": { "name": "Pale Ale", "price": "6" }
+      },
+      "desserts": {
+        "title": "Desserts",
+        "churros": { "name": "Churros", "description": "Cinnamon and sugar, salted caramel syrup, and chocolate brownie ice cream", "price": "8" },
+        "kormos": { "name": "Κορμός σοκολάτας", "description": "Salted caramel ice cream and slow-cooked falernum syrup", "price": "8.5" },
+        "iceCream": { "name": "PROVIO ice cream", "description": "Salted caramel / Chocolate brownie / Sheep's milk yogurt with honey and walnuts", "price": "4" },
+        "fruitSalad": { "name": "Seasonal Fruit Salad", "price": "7.5" }
+      },
+      "digestives": {
+        "title": "Digestives",
+        "axia": { "name": "Axia Masticha Spirit", "price": "13" },
+        "tsipouro": { "name": "Tsipouro Rocks N Grapes", "price": "11" },
+        "kitron": { "name": "Kitron of Naxos", "price": "10" },
+        "vermouth": { "name": "9di Dante Vermouth", "price": "11" }
       }
     },
     "cocktails": {
-      "title": "Signature Cocktails",
-      "aegeanSpritz": {
-        "name": "Aegean Spritz",
-        "description": "Mastiha, citrus, prosecco, thyme"
-      },
-      "naxosMule": {
-        "name": "Naxos Mule",
-        "description": "Local citron liqueur, ginger beer, lime"
-      },
-      "gardenGin": {
-        "name": "Garden Gin & Tonic",
-        "description": "Premium gin, Mediterranean tonic, rosemary, cucumber"
-      },
-      "sunsetNegroni": {
-        "name": "Sunset Negroni",
-        "description": "Gin, Campari, sweet vermouth, orange twist"
-      },
-      "pricklyPear": {
-        "name": "Prickly Pear Margarita",
-        "description": "Tequila, prickly pear syrup, lime, salt rim"
-      }
+      "title": "Masterpieces",
+      "myTie": { "name": "My Tie", "description": "Diplomatico Reserva Exclusiva infused with prickly pear, Perouvian Falernum, pineapple, orgeat homemade syrop", "price": "14" },
+      "fragkosiko": { "name": "Fragkosiko", "description": "Topanito Tequila Bianco, carrot water, mango, mangalore liquer, chili pepper, matcha tea, salted caramel", "price": "13" },
+      "popCornNegroni": { "name": "Pop Corn Negroni", "description": "Thomas Dakin Gin, Rosso blended vermouth, Malvasia dessert wine, Pop corn-Campari", "price": "14" },
+      "morenaSour": { "name": "Morena Sour", "description": "Metaxa Private Reserve with walnut, almond milk with honey and vanilla, citrus foam", "price": "13" },
+      "laDama": { "name": "La Dama", "description": "Titos handmade Vodka, St.Germain Elderflower, berries and rose cordial, ginger, pomegranate liquer", "price": "12" },
+      "hakunaMatata": { "name": "Hakuna Matata", "description": "Plantation Rum, banana water, salted caramel, Raki with hazelnut", "price": "13" },
+      "melonPaloma": { "name": "Melon Paloma", "description": "Buen Amigo Tequila, melon cordial, ruby chocolate salt, bubbles", "price": "12" }
     },
-    "wines": {
-      "title": "Wine & Beer",
-      "localWhite": {
-        "name": "Naxos White Wine",
-        "description": "Crisp, citrus notes, local vineyard"
-      },
-      "localRed": {
-        "name": "Naxos Red Wine",
-        "description": "Medium body, berry notes, earthy finish"
-      },
-      "prosecco": {
-        "name": "Prosecco",
-        "description": "By the glass"
-      },
-      "craftBeer": {
-        "name": "Greek Craft Beer",
-        "description": "Rotating selection"
-      }
-    },
-    "nonAlcoholic": {
-      "title": "Non-Alcoholic",
-      "lemonade": {
-        "name": "House Lemonade",
-        "description": "Fresh-squeezed, honey, mint"
-      },
-      "icedTea": {
-        "name": "Hibiscus Iced Tea",
-        "description": "Refreshing, lightly sweetened"
-      },
-      "smoothie": {
-        "name": "Seasonal Smoothie",
-        "description": "Fresh fruits, Greek yogurt"
-      },
-      "mocktail": {
-        "name": "Garden Mocktail",
-        "description": "Cucumber, elderflower, sparkling water"
-      }
+    "spritzeria": {
+      "title": "Spritzeria",
+      "kitroBellini": { "name": "Kitro Bellini", "description": "9di Dante Vermouth infused with grapes, peach cordial, champagne, Kitro salt", "price": "15" },
+      "axia": { "name": "AXIA", "description": "Axian Masticha, fraboise, bubbles, grapefruit soda", "price": "13" },
+      "bitterTruth": { "name": "Bitter Truth", "description": "Campari bitter, cherry soda, berries jam, bubbles", "price": "11" },
+      "rocksAndGrapes": { "name": "Rocks and Grapes", "description": "White wine infused with chamomile and oregano, olive brine, honey syrop", "price": "11" }
     },
     "dailySpecials": {
       "title": "Daily Specials",

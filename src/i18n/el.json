@@ -186,134 +186,147 @@
       "subtitle": "Τα μενού μας αλλάζουν με τις εποχές, γιορτάζοντας τους τοπικούς παραγωγούς και τις γεύσεις της Νάξου. Κάθε πιάτο και ποτό δημιουργείται με φροντίδα, από το πρωινό brunch ως τα βραδινά κοκτέιλ."
     },
     "tabs": {
-      "brunch": "Brunch & Ημέρα",
-      "cocktails": "Κοκτέιλ & Ποτά"
+      "brunch": "Brunch",
+      "food": "Φαγητό",
+      "cocktails": "Κοκτέιλ"
+    },
+    "pdf": {
+      "viewPdf": "Προβολή Πλήρους Μενού",
+      "download": "Λήψη PDF",
+      "close": "Κλείσιμο",
+      "sectionTitle": "Δείτε το πλήρες μενού σε PDF",
+      "cocktailsNote": "Διαθέσιμο μόνο στα Αγγλικά"
+    },
+    "brunchSection": {
+      "title": "Brunch",
+      "hours": "08:00-13:00",
+      "kayanas": { "name": "Καγιανάς", "description": "Απλωμένος σε χωριάτικο προζυμένιο ψωμί, χλωρή ρίγανη, πασπαλισμένη φέτα και ζαμπόνι Νάξου", "price": "9" },
+      "poachedEggs": { "name": "Αυγά ποσέ", "description": "Χωριάτικο ψωμί με guacamole, πίκλα αγγουριού και chips κρεμμύδι", "price": "8.5" },
+      "shakshuka": { "name": "Αξώτικη Shakshuka", "description": "Διπλοζυμωμένο ψωμί με πικάντικη σάλτσα τομάτας, ταρτάρ μελιτζάνας και τριμμένο ξινότυρο", "price": "9.5" },
+      "rizogalo": { "name": "Ρυζόγαλο", "description": "Αρωματισμένο με φραγκόσυκο, ginger και κανέλα", "price": "6.5" },
+      "frenchToast": { "name": "Αυγόφετες", "description": "Κρέμα Μπουγάτσας, καραμελωμένα σύκα με φρέσκο θυμάρι", "price": "8" }
     },
     "coffee": {
-      "title": "Καφέδες & Ροφήματα",
-      "greekCoffee": {
-        "name": "Ελληνικός Καφές",
-        "description": "Παραδοσιακός, πλούσιος και αρωματικός"
-      },
-      "espresso": {
-        "name": "Espresso / Cappuccino / Latte",
-        "description": "Τοπικά καβουρδισμένοι κόκκοι, επιδέξια παρασκευασμένοι"
-      },
-      "coldBrew": {
-        "name": "Island Cold Brew",
-        "description": "Απαλός, δροσιστικός, σερβιρισμένος με πάγο"
-      },
-      "juices": {
-        "name": "Φρέσκοι Χυμοί",
-        "description": "Πορτοκάλι, γκρέιπφρουτ, εποχιακά φρούτα"
-      },
-      "teas": {
-        "name": "Τσάι του Βουνού",
-        "description": "Τσάι του βουνού, χαμομήλι, μέντα από τον κήπο μας"
-      }
+      "title": "Coffee",
+      "espresso": { "name": "Espresso/double", "price": "3/4" },
+      "freddo": { "name": "Freddo Espreso", "price": "4.5" },
+      "greek": { "name": "Greek Coffee/Double", "price": "3/4" },
+      "furtado": { "name": "Furtado", "price": "4" },
+      "mokka": { "name": "Mokka", "price": "5" }
     },
-    "pastries": {
-      "title": "Σνακ & Γλυκά",
-      "yogurt": {
-        "name": "Γιαούρτι με Μέλι",
-        "description": "Με τοπικό μέλι, καρύδια και εποχιακά φρούτα"
-      },
-      "croissant": {
-        "name": "Κρουασάν Βουτύρου",
-        "description": "Φρεσκοψημένο, τραγανή τελειότητα"
-      },
-      "bougatsa": {
-        "name": "Μπουγάτσα",
-        "description": "Παραδοσιακό γλυκό με κρέμα και κανέλα"
-      },
-      "toast": {
-        "name": "Avocado Toast",
-        "description": "Ψωμί σίκαλης, ντοματίνια, φέτα, ελαιόλαδο"
-      }
+    "tea": {
+      "title": "Tea",
+      "english": { "name": "English breakfast", "price": "4.5" },
+      "matcha": { "name": "Matcha Tea", "price": "5.5" },
+      "seasonal": { "name": "Seasonal Iced Tea", "price": "5" },
+      "chamomile": { "name": "Chamomile", "price": "4" },
+      "mountain": { "name": "Mountain Iced Tea", "price": "5.5" }
     },
-    "brunch": {
-      "title": "Πιάτα Brunch",
-      "shakshuka": {
-        "name": "Σακσούκα Νάξου",
-        "description": "Αυγά σε πικάντικη σάλτσα ντομάτας, τοπική φέτα, τραγανό ψωμί"
+    "bites": {
+      "title": "Bites",
+      "hours": "08:00-19:00",
+      "carre": { "name": "Carre sandwich", "description": "Gouda, ζαμπόνι Νάξου, τομάτα, μαρούλι, μπέικον mayo. Σερβίρεται με δροσερή πράσινη σαλάτα", "price": "8" },
+      "panini": { "name": "Χωριάτικο Panini", "description": "Καραμελωμένη τομάτα, πατέ ελιάς, τραγανό κρεμμύδι, πίκλα αγγούρι, πολύχρωμες πιπεριές, τριμμένη φέτα και αγουρέλαιο", "price": "8.5" },
+      "burrito": { "name": "Τηγανητό Burrito", "description": "Chilli con carne, τουρσί jalapenos, τυριά Νάξου και baby καλαμπόκι", "price": "10" }
+    },
+    "sweets": {
+      "title": "Sweets",
+      "churros": { "name": "Churros", "description": "Κανέλα, ζάχαρη, σιρόπι αλατισμένης καραμέλας και παγωτό brownie chocolate", "price": "8" },
+      "iceCream": { "name": "PROVIO ice cream", "description": "Salted caramel / brownie chocolate / πρόβειο γιαούρτι με μέλι και καρύδια", "price": "4" },
+      "kormos": { "name": "Κορμός σοκολάτας", "description": "Παγωτό salted caramel και σιγομαγειρεμένο falernum syrup", "price": "8.5" },
+      "fruitSalad": { "name": "Φρουτοσαλάτα εποχής", "price": "7.5" }
+    },
+    "sips": {
+      "title": "Sips",
+      "softDrinks": { "name": "Coca Cola/zero - Sprite - Fanta Lemon/Orange", "price": "4" },
+      "lemonade": { "name": "Handcrafted Lemonade", "price": "7" },
+      "redBerry": { "name": "Red berry blossom soda", "price": "7" },
+      "detox": { "name": "Superboost Detox Shot", "description": "Ginger, pomegranate, honey", "price": "8" }
+    },
+    "food": {
+      "starters": {
+        "title": "Starters",
+        "eggplant": { "name": "Ταρτάρ καπνιστής μελιτζάνας", "description": "Σε μπρουσκέτα με σάλτσα καμμένης τομάτας, καρύδια και φητά τοματίνια", "price": "9" },
+        "octopus": { "name": "Καραμελωμένο χταπόδι", "description": "Με κιτρινόμαυρη φάβα, τηγανητή κάπαρη και gel φραγκόσυκου", "price": "18" },
+        "potato": { "name": "Βραχάκια πατάτας Νάξου", "description": "Με κρέμα γραβιέρας αρωματισμένη με λευκή τρούφα και σχινόπρασο", "price": "8.5" },
+        "croquettes": { "name": "Κροκέτες μουσακά", "description": "Με πικάντικη σάλτσα τομάτας", "price": "9.5" },
+        "shrimp": { "name": "Pop corn γαρίδας", "description": "Με guacamole και chips καπνιστής tortilla", "price": "11" }
       },
-      "omelette": {
-        "name": "Ομελέτα του Κήπου",
-        "description": "Αυγά ελευθέρας βοσκής, εποχιακά λαχανικά, βότανα, γραβιέρα"
+      "salads": {
+        "title": "Salads",
+        "spanakopita": { "name": "Σπανακόπιτα", "description": "Baby σπανάκι, baby ρόκα, μαρούλι, σπασμένο φύλλο σφολιάτας, τριμμένο ξινότυρο και λαδολέμονο", "price": "8" },
+        "quinoa": { "name": "Umami Quinoa", "description": "Quinoa, ξίδατο πατζάρι, αλατουριασμένος κρόκος αυγού, σπασμένα καρύδια, baby ρόκα και λαχανικά ατμού", "price": "11" },
+        "axotiki": { "name": "Αξώτικη", "description": "Πολύχρωμα τοματίνια, αγγούρι, πιπεριές, πίκλα κρεμμύδι, κρίταμο τουρσί, ροδέλες ελιάς και παξιμάδι χαρουπιού", "price": "9" },
+        "fragkosyko": { "name": "Φραγκοσυκιανή", "description": "Πλιγούρι, φέτα, ψητό ροδάκινο, vinaigrette από φραγκόσυκο και ginger, φρέσκο δυόσμο και μαυροσούσαμο", "price": "10" }
       },
-      "pancakes": {
-        "name": "Αφράτες Τηγανίτες",
-        "description": "Με μέλι, φρέσκα μούρα και ελληνικό γιαούρτι"
+      "mains": {
+        "title": "Mains",
+        "kalogeros": { "name": "Παραδοσιακός Καλόγηρος", "description": "Μοσχαράκι κοκκινιστό, πουρές από μελιτζάνα και πατάτα, τριμμένο ξινότυρο και κρούστα σφολιάτας", "price": "15" },
+        "ballotine": { "name": "Μπαλοτίνα κοτόπουλο", "description": "Κρέμα από Αρσενικού Νάξου, τσιγαριαστά χόρτα, καμένο μπρόκολο και κρέμα λεμόνι", "price": "13" },
+        "burger": { "name": "Burger προβατίνας", "description": "Χειροποίητη ketchup, baby ρόκα, πίκλα κρεμμυδιού και κρέμα γραβιέρας αρωματισμένη με λευκή τρούφα", "price": "16" },
+        "orzo": { "name": "Κριθαρότο πατζάρι", "description": "Λαχανικά sauté, ψητά μανιτάρια πλευρώτους και sour cream", "price": "10" },
+        "picanha": { "name": "Picanha Νάξου", "description": "Ψητή γλυκοπατάτα και γλασαρισμένο baby καλαμπόκι", "price": "26" },
+        "seaBass": { "name": "Λαυράκι φρικασέ", "description": "Χόρτα εποχής και βουτυράτη σάλτσα εσπεριδοειδών", "price": "17" },
+        "linguine": { "name": "Λιγκουίνι γαρίδας", "description": "Καψαλισμένα πιπέρια, bisque, φύτρες σκόρδου και Βερμούτ από θυμάρι", "price": "14" }
       },
-      "bowl": {
-        "name": "Mediterranean Bowl",
-        "description": "Κινόα, χούμους, ψητά λαχανικά, ντρέσινγκ ταχίνι"
+      "wine": {
+        "title": "Wine",
+        "white": {
+          "title": "White",
+          "palaiaKtimata": { "name": "Παλαιά Κτήματα", "description": "Σαββατιανό, Οινοποιείο Παπαγιαννάκος", "price": "27" },
+          "lagopati": { "name": "Λαγοπάτι", "description": "Μοσχάτο Αλεξανδρείας, Κτήμα Χατζηγεωργίου", "price": "35" },
+          "senarioWhite": { "name": "Senario", "description": "Ροδίτης, Mochato-Αμβούργου, Κτήμα Αποστολάκη", "price": "21" },
+          "metheaWhite": { "name": "Μεθέα", "description": "Ασσύρτικο, Οινοποιείο Βρινιώτη", "price": "24" }
+        },
+        "rose": {
+          "title": "Rosé",
+          "granatus": { "name": "Granatus", "description": "Cabernet Sauvignon, Αγιωργίτικο, Οινοποιείο Παπαγιαννάκος", "price": "29" },
+          "metheaRose": { "name": "Μεθέα", "description": "Μαυροκουντούρα, Μονεμβασιά, Οινοποιείο Βρινιώτη", "price": "25" }
+        },
+        "red": {
+          "title": "Red",
+          "senarioRed": { "name": "Senario", "description": "Merlot, Muscat of Hamburg, Λιμνιώνα, Κτήμα Αποστολάκη", "price": "23" },
+          "metheaRed": { "name": "Μεθέα", "description": "Μαυροκουντούρα, Οινοποιείο Βρινιώτη", "price": "26" }
+        }
       },
-      "eggs": {
-        "name": "Αυγά όπως τα Θέλετε",
-        "description": "Ποσέ, scrambled ή τηγανητά με τοστ και χόρτα"
+      "beer": {
+        "title": "Beer",
+        "subtitle": "Απολαύστε τις Signature μπύρες του Φραγκόσυκου",
+        "fragosyko": { "name": "Fragosyko Lager", "price": "5.5" },
+        "light": { "name": "Light Lager", "price": "6" },
+        "pale": { "name": "Pale Ale", "price": "6" }
+      },
+      "desserts": {
+        "title": "Desserts",
+        "churros": { "name": "Churros", "description": "Κανέλα και ζάχαρη, σιρόπι αλατισμένης καραμέλας και παγωτό brownie chocolate", "price": "8" },
+        "kormos": { "name": "Κορμός σοκολάτας", "description": "Παγωτό salted caramel με σιγομαγειρεμένο falernum syrup", "price": "8.5" },
+        "iceCream": { "name": "PROVIO ice cream", "description": "Salted caramel / Brownie chocolate / Πρόβειο γιαούρτι με μέλι και καρύδια", "price": "4" },
+        "fruitSalad": { "name": "Φρουτοσαλάτα εποχής", "price": "7.5" }
+      },
+      "digestives": {
+        "title": "Digestives",
+        "axia": { "name": "Axia Masticha Spirit", "price": "13" },
+        "tsipouro": { "name": "Tsipouro Rocks N Grapes", "price": "11" },
+        "kitron": { "name": "Kitron Naxou", "price": "10" },
+        "vermouth": { "name": "9di Dante Vermouth", "price": "11" }
       }
     },
     "cocktails": {
-      "title": "Signature Κοκτέιλ",
-      "aegeanSpritz": {
-        "name": "Aegean Spritz",
-        "description": "Μαστίχα, εσπεριδοειδή, prosecco, θυμάρι"
-      },
-      "naxosMule": {
-        "name": "Naxos Mule",
-        "description": "Τοπικό λικέρ κίτρου, ginger beer, lime"
-      },
-      "gardenGin": {
-        "name": "Garden Gin & Tonic",
-        "description": "Premium gin, Mediterranean tonic, δεντρολίβανο, αγγούρι"
-      },
-      "sunsetNegroni": {
-        "name": "Sunset Negroni",
-        "description": "Gin, Campari, γλυκό βερμούτ, φλούδα πορτοκαλιού"
-      },
-      "pricklyPear": {
-        "name": "Prickly Pear Margarita",
-        "description": "Τεκίλα, σιρόπι φραγκόσυκου, lime, αλάτι"
-      }
+      "title": "Masterpieces",
+      "myTie": { "name": "My Tie", "description": "Diplomatico Reserva Exclusiva infused with prickly pear, Perouvian Falernum, pineapple, orgeat homemade syrop", "price": "14" },
+      "fragkosiko": { "name": "Fragkosiko", "description": "Topanito Tequila Bianco, carrot water, mango, mangalore liquer, chili pepper, matcha tea, salted caramel", "price": "13" },
+      "popCornNegroni": { "name": "Pop Corn Negroni", "description": "Thomas Dakin Gin, Rosso blended vermouth, Malvasia dessert wine, Pop corn-Campari", "price": "14" },
+      "morenaSour": { "name": "Morena Sour", "description": "Metaxa Private Reserve with walnut, almond milk with honey and vanilla, citrus foam", "price": "13" },
+      "laDama": { "name": "La Dama", "description": "Titos handmade Vodka, St.Germain Elderflower, berries and rose cordial, ginger, pomegranate liquer", "price": "12" },
+      "hakunaMatata": { "name": "Hakuna Matata", "description": "Plantation Rum, banana water, salted caramel, Raki with hazelnut", "price": "13" },
+      "melonPaloma": { "name": "Melon Paloma", "description": "Buen Amigo Tequila, melon cordial, ruby chocolate salt, bubbles", "price": "12" }
     },
-    "wines": {
-      "title": "Κρασί & Μπύρα",
-      "localWhite": {
-        "name": "Λευκό Κρασί Νάξου",
-        "description": "Φρέσκο, με νότες εσπεριδοειδών, τοπικό αμπέλι"
-      },
-      "localRed": {
-        "name": "Κόκκινο Κρασί Νάξου",
-        "description": "Μεσαίο σώμα, νότες μούρων, γήινη απόληξη"
-      },
-      "prosecco": {
-        "name": "Prosecco",
-        "description": "Με το ποτήρι"
-      },
-      "craftBeer": {
-        "name": "Ελληνική Craft Μπύρα",
-        "description": "Εναλλασσόμενη επιλογή"
-      }
-    },
-    "nonAlcoholic": {
-      "title": "Χωρίς Αλκοόλ",
-      "lemonade": {
-        "name": "Σπιτική Λεμονάδα",
-        "description": "Φρεσκοστυμμένη, με μέλι και μέντα"
-      },
-      "icedTea": {
-        "name": "Παγωμένο Τσάι Ιβίσκου",
-        "description": "Δροσιστικό, ελαφρά γλυκό"
-      },
-      "smoothie": {
-        "name": "Εποχιακό Smoothie",
-        "description": "Φρέσκα φρούτα, ελληνικό γιαούρτι"
-      },
-      "mocktail": {
-        "name": "Garden Mocktail",
-        "description": "Αγγούρι, elderflower, ανθρακούχο νερό"
-      }
+    "spritzeria": {
+      "title": "Spritzeria",
+      "kitroBellini": { "name": "Kitro Bellini", "description": "9di Dante Vermouth infused with grapes, peach cordial, champagne, Kitro salt", "price": "15" },
+      "axia": { "name": "AXIA", "description": "Axian Masticha, fraboise, bubbles, grapefruit soda", "price": "13" },
+      "bitterTruth": { "name": "Bitter Truth", "description": "Campari bitter, cherry soda, berries jam, bubbles", "price": "11" },
+      "rocksAndGrapes": { "name": "Rocks and Grapes", "description": "White wine infused with chamomile and oregano, olive brine, honey syrop", "price": "11" }
     },
     "dailySpecials": {
       "title": "Ημερήσιες Προτάσεις",
