@@ -1,0 +1,22 @@
+# Fragkosiko (Φραγκόσυκο)
+
+> Fragkosiko is a hidden garden restaurant, café, and cocktail bar located in the heart of Naxos Town, Cyclades, Greece. Open daily from 8:00 AM to midnight. Named after the prickly pear cactus (φραγκόσυκο), a symbol of the Greek islands.
+
+## About
+
+Fragkosiko is a beloved local spot in Naxos, Greece, tucked inside a whitewashed Cycladic courtyard garden. It serves artisanal brunch and coffee by day, and signature cocktails and a full food menu by evening. It celebrates local Naxian ingredients, traditional Greek flavors, and warm Mediterranean hospitality.
+
+Co-founders: Dimitris Molindris (Head Chef), Christos Lagios (Bar Manager), Christos Oikonomou (Operations).
+
+## Pages
+
+- [Home](https://fragkosiko.gr/)
+- [Menu](https://fragkosiko.gr/menu/)
+- [About](https://fragkosiko.gr/about/)
+- [Gallery](https://fragkosiko.gr/gallery/)
+- [Contact](https://fragkosiko.gr/contact/)
+- [Reservations](https://fragkosiko.gr/reservations/)
+
+## Optional
+
+- [Full menu & content for AI](https://fragkosiko.gr/llms-full.txt)

@@ -42,6 +42,81 @@ const { title, description = t('footer.tagline') } = Astro.props;
     <meta property="twitter:image" content="/og-image.svg" />
 
     <title>{title}</title>
+
+    <!-- Structured Data: Restaurant (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Fragkosiko",
+      "alternateName": ["Φραγκόσυκο", "Fragkosiko"],
+      "description": "A hidden garden restaurant, café, and cocktail bar in the heart of Naxos Town, Cyclades, Greece. Artisanal brunch by day, signature cocktails and Mediterranean food by night. Open daily 8:00 AM to midnight.",
+      "url": "https://fragkosiko.gr",
+      "logo": "https://fragkosiko.gr/logo.png",
+      "image": "https://fragkosiko.gr/og-image.svg",
+      "telephone": "+302285012345",
+      "email": "info@fragkosiko.com",
+      "servesCuisine": ["Greek", "Mediterranean", "Modern European", "Brunch", "Cocktails"],
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Cash, Credit Card",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Central Naxos Town",
+        "addressLocality": "Naxos",
+        "addressRegion": "Cyclades",
+        "postalCode": "84300",
+        "addressCountry": "GR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.1036,
+        "longitude": 25.3764
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "08:00",
+          "closes": "00:00"
+        }
+      ],
+      "hasMenu": "https://fragkosiko.gr/menu/",
+      "menu": "https://fragkosiko.gr/menu/",
+      "acceptsReservations": "True",
+      "reservationUrl": "https://fragkosiko.gr/reservations/",
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Outdoor Seating", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Garden Courtyard", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true }
+      ],
+      "founder": [
+        { "@type": "Person", "name": "Dimitris Molindris", "jobTitle": "Co-Founder & Head Chef" },
+        { "@type": "Person", "name": "Christos Lagios", "jobTitle": "Co-Founder & Bar Manager" },
+        { "@type": "Person", "name": "Christos Oikonomou", "jobTitle": "Co-Founder & Operations" }
+      ],
+      "sameAs": [
+        "https://fragkosiko.gr"
+      ],
+      "keywords": "Fragkosiko, Φραγκόσυκο, Naxos restaurant, Naxos brunch, Naxos cocktails, hidden garden Naxos, Naxos cafe, prickly pear Naxos, Cyclades restaurant, Greece brunch"
+    }
+    </script>
+
+    <!-- Structured Data: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Fragkosiko",
+      "url": "https://fragkosiko.gr",
+      "description": "Official website of Fragkosiko — hidden garden restaurant, café and cocktail bar in Naxos, Greece.",
+      "inLanguage": ["el", "en"],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": "https://fragkosiko.gr/reservations/"
+      }
+    }
+    </script>
   </head>
   <body class="font-sans text-text-primary bg-background">
     <slot />
