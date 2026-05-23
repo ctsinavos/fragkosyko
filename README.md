@@ -142,4 +142,4 @@ Copyright © 2025 Fragkosiko. All rights reserved.
 
 ## 💬 Support
 
-For questions or support, contact: info@fragkosiko.com
+For questions or support, contact: info@fragkosiko.gr

@@ -13,7 +13,7 @@
     "quickLinks": "Quick Links",
     "contact": "Contact",
     "openingHours": "Opening Hours",
-    "daily": "Daily: 8:00 AM - 12:00 AM",
+    "daily": "Daily: 9:00 AM - 11:30 PM",
     "copyright": "Fragkosiko. All rights reserved.",
     "location": "Naxos, Greece"
   },
@@ -30,12 +30,12 @@
       "brunch": {
         "title": "Brunch & Coffee",
         "description": "Artisanal coffee, freshly baked pastries, eggs made your way, seasonal fruits, and dishes inspired by local Naxos ingredients. Start your day in our sun-dappled courtyard.",
-        "hours": "8:00 AM - 2:00 PM"
+        "hours": "9:00 AM - 2:00 PM"
       },
       "cocktails": {
         "title": "Cocktails & Evenings",
         "description": "Signature cocktails inspired by island herbs, curated wines, ambient music, and a relaxed atmosphere. Watch the courtyard transform under soft lights and starlit skies.",
-        "hours": "6:00 PM - 12:00 AM"
+        "hours": "6:00 PM - 11:30 PM"
       }
     },
     "highlights": {
@@ -76,7 +76,7 @@
     },
     "cta": {
       "title": "Ready to Visit?",
-      "subtitle": "Reserve your spot in our garden or simply walk in—we're in the heart of Naxos Town.",
+      "subtitle": "Reserve your spot in our garden or simply walk in—we're in Filoti, Naxos.",
       "makeReservation": "Make a Reservation",
       "getDirections": "Get Directions"
     },
@@ -123,7 +123,7 @@
     },
     "story": {
       "p1": "Fragkosiko was born from a love of Naxos—its sun-soaked mornings, its vibrant evenings, and the way life here moves between the energy of the day and the calm of the night. We wanted to create a space that captures this rhythm, a hidden garden where locals and travelers alike can gather, relax, and savor the island's best.",
-      "p2": "Tucked away in the heart of Naxos Town, our courtyard is an oasis—whitewashed walls, lush greenery, and the kind of light that shifts beautifully from morning to midnight. By day, it's the perfect spot for a leisurely brunch and a perfectly brewed coffee. By night, the space transforms into an intimate setting for cocktails, conversation, and connection.",
+      "p2": "Tucked away in Filoti, Naxos, our courtyard is an oasis—whitewashed walls, lush greenery, and the kind of light that shifts beautifully from morning to midnight. By day, it's the perfect spot for a leisurely brunch and a perfectly brewed coffee. By night, the space transforms into an intimate setting for cocktails, conversation, and connection.",
       "p3": "Every detail, from the seasonal menu to the thoughtfully curated drinks, reflects our commitment to celebrating local producers, traditional flavors, and the warm hospitality that Naxos is known for. We invite you to step into our garden and experience it for yourself."
     },
     "name": {
@@ -456,16 +456,16 @@
       "visitTitle": "Visit Our Garden",
       "location": "Location",
       "address": {
-        "line1": "Central Naxos Town",
+        "line1": "Filoti",
         "line2": "Naxos, Cyclades",
-        "line3": "Greece, 84300"
+        "line3": "Greece, 84302"
       },
       "phone": "Phone",
       "email": "Email",
       "openingHours": "Opening Hours",
-      "daily": "Daily: 8:00 AM - 12:00 AM",
-      "brunchHours": "Brunch: 8:00 AM - 2:00 PM",
-      "eveningHours": "Evening: 6:00 PM - 12:00 AM",
+      "daily": "Daily: 9:00 AM - 11:30 PM",
+      "brunchHours": "Brunch: 9:00 AM - 2:00 PM",
+      "eveningHours": "Evening: 6:00 PM - 11:30 PM",
       "followUs": "Follow Us",
       "findUs": "Find Us"
     },
@@ -481,7 +481,7 @@
     },
     "gettingHere": {
       "title": "Getting Here",
-      "subtitle": "We're located in the heart of Naxos Town, just a short walk from the port.",
+      "subtitle": "We're located in Filoti, Naxos.",
       "byFoot": {
         "title": "On Foot",
         "description": "5-minute walk from Naxos Port, through the charming old town streets"
@@ -505,8 +505,8 @@
     "success": "Success",
     "required": "Required field",
     "optional": "Optional",
-    "phone": "+30 228 501 2345",
-    "emailAddress": "info@fragkosiko.com"
+    "phone": "2285032380",
+    "emailAddress": "info@fragkosiko.gr"
   },
   "toast": {
     "reservationSuccess": "Thank you! Your reservation request has been submitted. We'll confirm via email within 24 hours.",
@@ -514,4 +514,3 @@
     "error": "Something went wrong. Please try again or contact us directly."
   }
 }
-
