@@ -124,7 +124,9 @@
     "story": {
       "p1": "Fragkosiko was born from a love of Naxos—its sun-soaked mornings, its vibrant evenings, and the way life here moves between the energy of the day and the calm of the night. We wanted to create a space that captures this rhythm, a hidden garden where locals and travelers alike can gather, relax, and savor the island's best.",
       "p2": "Tucked away in Filoti, Naxos, our courtyard is an oasis—whitewashed walls, lush greenery, and the kind of light that shifts beautifully from morning to midnight. By day, it's the perfect spot for a leisurely brunch and a perfectly brewed coffee. By night, the space transforms into an intimate setting for cocktails, conversation, and connection.",
-      "p3": "Every detail, from the seasonal menu to the thoughtfully curated drinks, reflects our commitment to celebrating local producers, traditional flavors, and the warm hospitality that Naxos is known for. We invite you to step into our garden and experience it for yourself."
+      "p3": "Every detail, from the seasonal menu to the thoughtfully curated drinks, reflects our commitment to celebrating local producers, traditional flavors, and the warm hospitality that Naxos is known for. We invite you to step into our garden and experience it for yourself.",
+      "p4": "Every dish we serve, every cocktail we mix, and every glass of wine we pour carries within it our love for quality ingredients and genuine hospitality.",
+      "p5": "Welcome to our garden in Filoti. Welcome to the Fragkosiko family."
     },
     "name": {
       "title": "The Name \"Fragkosiko\"",
@@ -157,17 +159,21 @@
       "member1": {
         "name": "Dimitris Molindris",
         "role": "Co-Founder & Head Chef",
-        "bio": "Born and raised in Naxos, Dimitris brings his grandmother's recipes and a modern twist to every dish."
+        "bio": "Born and raised in Naxos, Dimitris brings his love for Greek gastronomy and the authentic ingredients of the Aegean to every dish. As executive chef, he places great emphasis on flavor, quality, and hospitality.",
+        "bio2": "He also serves as head of public relations and evaluation of new members at the Hellenic Academy of Chefs, actively contributing to the evolution of the modern Greek culinary scene."
       },
       "member2": {
         "name": "Christos Lagios",
         "role": "Co-Founder & Bar Manager",
-        "bio": "A cocktail enthusiast with a passion for local herbs and island-inspired flavors."
+        "bio": "From Karpenisi, with a restless spirit, Christos began his journey behind a bar, always seeking new experiences and different forms of hospitality. His early seasons in Monemvasia, Mykonos, Santorini and Cyprus shaped his philosophy around the guest experience, the energy of the space, and the importance of detail.",
+        "bio2": "He later evolved into an F&B Manager and consultant, collaborating with major groups, 5-star hotels, and demanding hospitality projects including the AEK – OPAP Arena and the YTON Project Show.",
+        "bio3": "Today, through his first entrepreneurial venture in Naxos, he aims to create a space with creativity, funky aesthetics, and authentic hospitality that brings a vibrant experience around food, drink, and human connection."
       },
       "member3": {
         "name": "Christos Oikonomou",
         "role": "Co-Founder & Operations",
-        "bio": "With a background in hospitality, Christos ensures every guest feels at home in our garden."
+        "bio": "From Corinth, with a deep love for authentic hospitality and service. After years in luxury vehicle sales, Christos learned that true success lies in the details and in the complete satisfaction of those who trust you.",
+        "bio2": "For him, Fragkosiko in Filoti is the realization of a dream—bringing all his premium service experience into a relaxed paradise in the heart of Naxos, where Cycladic tradition meets exceptional care and every guest feels unique."
       }
     },
     "experience": {
@@ -484,11 +490,11 @@
       "subtitle": "We're located in Filoti, Naxos.",
       "byFoot": {
         "title": "On Foot",
-        "description": "5-minute walk from Naxos Port, through the charming old town streets"
+        "description": "1-minute walk from the bus stop in Filoti"
       },
       "byBus": {
         "title": "By Bus",
-        "description": "Bus stop 'Naxos Center' is just 2 minutes away"
+        "description": "Regular routes from Naxos Town heading to Filoti. Get off at the Filoti stop and you're there in 1 minute."
       },
       "byTaxi": {
         "title": "By Taxi",
