@@ -16,6 +16,14 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false, // We're using our own global.css
     }),
-    sitemap(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'el',
+        locales: {
+          el: 'el-GR',
+          en: 'en-US',
+        },
+      },
+    }),
   ],
 });
