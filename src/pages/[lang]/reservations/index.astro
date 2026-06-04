@@ -77,11 +77,13 @@ const t = useTranslations(lang);
               <select id="time" name="time" required class="w-full px-4 py-3 border border-warm-sand rounded-lg focus:ring-2 focus:ring-garden-green focus:border-transparent">
                 <option value="">{t('reservations.form.selectTime')}</option>
                 <optgroup label={t('reservations.form.brunch')}>
-                  <option value="08:00">08:00</option><option value="09:00">09:00</option><option value="10:00">10:00</option>
-                  <option value="11:00">11:00</option><option value="12:00">12:00</option><option value="13:00">13:00</option>
+                  <option value="09:00">09:00</option><option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option><option value="12:00">12:00</option>
                 </optgroup>
                 <optgroup label={t('reservations.form.evening')}>
-                  <option value="18:00">18:00</option><option value="19:00">19:00</option><option value="20:00">20:00</option>
+                  <option value="13:00">13:00</option><option value="14:00">14:00</option><option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option><option value="17:00">17:00</option><option value="18:00">18:00</option>
+                  <option value="19:00">19:00</option><option value="20:00">20:00</option>
                   <option value="21:00">21:00</option><option value="22:00">22:00</option>
                 </optgroup>
               </select>
@@ -111,50 +113,6 @@ const t = useTranslations(lang);
           <button type="submit" class="w-full px-8 py-4 bg-garden-green text-cycladic-white rounded-full hover:bg-garden-green-dark transition-all hover:shadow-lg text-lg font-semibold">{t('reservations.form.submit')}</button>
           <p class="text-sm text-charcoal/60 text-center mt-4">{t('reservations.info.confirmation.description')}</p>
         </form>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-gradient-to-br from-warm-sand/20 to-sea-teal/10">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-serif font-bold text-center mb-12 text-garden-green">{t('reservations.info.title')}</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
-            <div class="w-16 h-16 bg-garden-green/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-              <svg class="w-8 h-8 text-garden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            </div>
-            <h3 class="text-xl font-serif font-bold mb-2 text-garden-green">{t('reservations.info.confirmation.title')}</h3>
-            <p class="text-charcoal/70 text-sm">{t('reservations.info.confirmation.description')}</p>
-          </div>
-          <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
-            <div class="w-16 h-16 bg-sea-teal/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-              <svg class="w-8 h-8 text-sea-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </div>
-            <h3 class="text-xl font-serif font-bold mb-2 text-sea-teal">{t('reservations.info.walkIns.title')}</h3>
-            <p class="text-charcoal/70 text-sm">{t('reservations.info.walkIns.description')}</p>
-          </div>
-          <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
-            <div class="w-16 h-16 bg-prickly-pear/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-              <svg class="w-8 h-8 text-prickly-pear" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            </div>
-            <h3 class="text-xl font-serif font-bold mb-2 text-prickly-pear">{t('reservations.info.cancellation.title')}</h3>
-            <p class="text-charcoal/70 text-sm">{t('reservations.info.cancellation.description')}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-serif font-bold mb-8 text-garden-green">{t('footer.openingHours')}</h2>
-      <div class="max-w-md mx-auto bg-gradient-to-br from-warm-sand/20 to-sea-teal/10 rounded-2xl p-8">
-        <p class="text-2xl font-serif text-garden-green mb-6">{t('footer.daily')}</p>
-        <div class="border-t border-charcoal/20 pt-6">
-          <p class="text-sm text-charcoal/70 mb-2">{t('contact.info.brunchHours')}</p>
-          <p class="text-sm text-charcoal/70">{t('contact.info.eveningHours')}</p>
-        </div>
       </div>
     </div>
   </section>

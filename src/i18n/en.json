@@ -19,59 +19,51 @@
   },
   "home": {
     "hero": {
-      "title": "A Hidden Garden in the Heart of Naxos",
-      "description": "By day, Fragkosiko is your sunlit escape for artisanal coffee and fresh, locally inspired brunch. By night, the courtyard glows with warm light, crafted cocktails, and a relaxed island atmosphere. Step into our garden and experience Naxos hospitality from morning to midnight.",
+      "title": "A hidden garden in the heart of Naxos, in the traditional village of Filoti",
+      "description": "Away from the bustle of Chora, in the heart of Naxos, in the historic village of Filoti, you'll find a hidden garden filled with flavors and aromas. At Fragkosiko, Cycladic hospitality meets contemporary design. From morning to night, we serve premium coffee and an elevated brunch by day, and refreshing signature cocktails, fine wine, and thoughtfully prepared dishes by evening. Our courtyard is the perfect retreat for every moment of your day.",
       "bookTable": "Book a Table",
       "viewMenu": "View Menu"
     },
     "dayNight": {
       "title": "From Dawn to Dusk",
-      "subtitle": "Experience the transformation of our garden courtyard throughout the day",
+      "subtitle": "From the first light of day with coffee and brunch, to signature cocktails in the evening, experience Fragkosiko from dawn to dusk.",
       "brunch": {
-        "title": "Brunch & Coffee",
-        "description": "Artisanal coffee, freshly baked pastries, eggs made your way, seasonal fruits, and dishes inspired by local Naxos ingredients. Start your day in our sun-dappled courtyard.",
-        "hours": "9:00 AM - 2:00 PM"
+        "title": "Coffee & Brunch",
+        "description": "The day begins with the aroma of freshly roasted coffee. We select fine blends and specialty coffees, crafted with care, to accompany your breakfast or brunch.",
+        "hours": "9:00 AM - 1:00 PM"
       },
       "cocktails": {
-        "title": "Cocktails & Evenings",
-        "description": "Signature cocktails inspired by island herbs, curated wines, ambient music, and a relaxed atmosphere. Watch the courtyard transform under soft lights and starlit skies.",
-        "hours": "6:00 PM - 11:30 PM"
+        "title": "Dinner & Cocktail",
+        "description": "As the sun sets behind the mountains of Naxos, the atmosphere transforms. The courtyard lights come on, and our bar comes to life. From classic choices and premium spirits to our signature cocktails. Pair them with our signature dishes.",
+        "hours": "1:00 PM – 11:30 PM"
       }
     },
     "highlights": {
-      "title": "Signature Highlights",
+      "title": "Our Top Picks",
       "subtitle": "A taste of what awaits you",
       "naxosShakshuka": {
-        "title": "Naxos Shakshuka",
-        "description": "Farm eggs poached in spiced tomato sauce with local feta, served with crusty bread"
-      },
-      "aegeanSpritz": {
-        "title": "Aegean Spritz",
-        "description": "Our signature cocktail with mastiha, citrus, prosecco, and a hint of thyme"
-      },
-      "gardenBowl": {
-        "title": "Garden Bowl",
-        "description": "Fresh seasonal greens, grains, avocado, and herbs from our courtyard garden"
-      },
-      "islandColdBrew": {
-        "title": "Island Cold Brew",
-        "description": "Smooth Greek coffee, locally roasted, served over ice"
-      },
-      "aegeanSunset": {
-        "title": "Aegean Sunset",
-        "description": "Ouzo, citrus, honey, and a hint of lavender"
-      },
-      "avocadoToast": {
-        "title": "Garden Avocado Toast",
-        "description": "Sourdough, smashed avocado, cherry tomatoes, feta, olive oil"
-      },
-      "greekPastryBoard": {
-        "title": "Greek Pastry Board",
-        "description": "Fresh bougatsa, koulouri, and local honey from Naxos bees"
+        "title": "Kayanas",
+        "description": "Scrambled eggs on rustic sourdough, fresh oregano, crumbled feta and Naxian cured ham"
       },
       "fragkosikoSour": {
-        "title": "Fragkosiko Sour",
-        "description": "Gin, prickly pear, lemon, and wild thyme from our garden"
+        "title": "Fragkosiko",
+        "description": "Topanito Tequila Bianco, carrot water, mango, chili pepper, matcha tea, salted caramel"
+      },
+      "greekPastryBoard": {
+        "title": "Moussaka Croquettes",
+        "description": "With spicy tomato sauce"
+      },
+      "islandColdBrew": {
+        "title": "Burrito",
+        "description": "Chili con carne, pickled jalapeños, Naxian cheeses and baby corn"
+      },
+      "aegeanSunset": {
+        "title": "Mellon Paloma",
+        "description": "Buen Amigo Tequila, melon cordial, ruby chocolate salt, bubbles"
+      },
+      "avocadoToast": {
+        "title": "Beetroot Orzo",
+        "description": "Sautéed vegetables, roasted oyster mushrooms and sour cream"
       }
     },
     "cta": {
@@ -83,7 +75,7 @@
     "courtyard": {
       "sectionLabel": "Our Space",
       "title": "The Hidden Courtyard",
-      "subtitle": "A sanctuary in the heart of Naxos where Cycladic charm meets modern comfort",
+      "subtitle": "We've created an elegant, refreshing space that accompanies you throughout the day — from your morning coffee and brunch to the most relaxed afternoon moments. And as the sun sets, the atmosphere gently transforms. If you're looking for a distinctive evening experience, different from the usual, then Fragkosiko is the place you should visit.",
       "image1": {
         "title": "Morning Serenity",
         "description": "Start your day in our sun-dappled garden"
@@ -189,7 +181,7 @@
     },
     "hero": {
       "title": "Our Menu",
-      "subtitle": "Our menus change with the seasons, celebrating local producers and Naxos flavors. Every dish and drink is crafted with care, from sunrise brunch to starlit cocktails."
+      "subtitle": "From our menu selections, each dish is rooted in tradition, yet presented with a contemporary twist — creations worth discovering. We use pure, fresh ingredients, sourced mainly from Naxos, from seasonal vegetables and meats to the island's exceptional extra virgin olive oil. Everything is prepared daily by our team, with attention to detail and respect for flavor, because we put our signature on every dish and cocktail."
     },
     "tabs": {
       "brunch": "Brunch",
@@ -430,7 +422,7 @@
       "specialRequestsPlaceholder": "Dietary restrictions, seating preferences, etc.",
       "submit": "Request Reservation",
       "brunch": "Brunch",
-      "evening": "Evening",
+      "evening": "Lunch - Dinner",
       "required": "required"
     },
     "info": {
@@ -471,7 +463,7 @@
       "openingHours": "Opening Hours",
       "daily": "Daily: 9:00 AM - 11:30 PM",
       "brunchHours": "Brunch: 9:00 AM - 2:00 PM",
-      "eveningHours": "Evening: 6:00 PM - 11:30 PM",
+      "eveningHours": "Lunch - Dinner: 1:00 PM - 11:30 PM",
       "followUs": "Follow Us",
       "findUs": "Find Us"
     },
