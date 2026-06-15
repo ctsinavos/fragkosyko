@@ -23,6 +23,29 @@ const { title, description = t('footer.tagline') } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18171137434"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18171137434');
+
+      // Phone number click conversion (footer & contact page)
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18171137434/tJsuCKWp4L4cEJqb1thD',
+          'event_callback': callback
+        });
+        return false;
+      }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -131,7 +154,7 @@ const { title, description = t('footer.tagline') } = Astro.props;
           <circle cx="24" cy="18" r="5" fill="#fff"/>
         </svg>
       </a>
-      <a href="https://instagram.com/fragkosiko" target="_blank" rel="noopener noreferrer"
+      <a href="https://www.instagram.com/fragkosiko_naxos/" target="_blank" rel="noopener noreferrer"
          title="Follow us on Instagram"
          class="w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:scale-110 transition-transform border border-gray-100">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6">
